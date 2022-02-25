@@ -1,0 +1,15 @@
+export default {
+  transparent: 'rgba(0,0,0,0)',
+  inputBackground: '#FFFFFF',
+  white: '#ffffff',
+  text: '#000000',
+  black: '#000000',
+  gray: '#7896B4',
+  disabled: '#c1c1c1',
+  primary: '#243746',
+  secondary: '#94C200',
+  price: '#C92828',
+  success: '#94C200',
+  error: '#FF0F7C',
+  warning: '#FF762B',
+};
