@@ -41,6 +41,14 @@
 	<string/>
 	<key>UIAppFonts</key>
 	<array>
+		<string>Calibri-Bold.ttf</string>
+		<string>Nunito-Regular.ttf</string>
+		<string>Nunito-Bold.ttf</string>
+		<string>Nunito-SemiBold.ttf</string>
+		<string>Poppins-Regular.ttf</string>
+		<string>Calibri-Regular.ttf</string>
+		<string>Gilroy-ExtraBold.otf</string>
+		<string>Gilroy-Light.otf</string>
 		<string>AntDesign.ttf</string>
 		<string>Entypo.ttf</string>
 		<string>EvilIcons.ttf</string>

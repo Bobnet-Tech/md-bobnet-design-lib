@@ -17,6 +17,14 @@
 		2DCD954D1E0B4F2C00145EB5 /* BobDesignExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* BobDesignExampleTests.m */; };
 		4C39C56BAD484C67AA576FFA /* libPods-BobDesignExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA3E69C5B9553B26FBA2DF04 /* libPods-BobDesignExample.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		9703069B279543CD89E18615 /* Calibri-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2229D22C286247439EC96F66 /* Calibri-Bold.ttf */; };
+		74D2539B90C64BC6BE81B559 /* Calibri-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 849E6EAB573E41FEA6BA0BB7 /* Calibri-Regular.ttf */; };
+		26A761EFC52D49F19A87CBD2 /* Gilroy-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2B5B1B5B565445179F2AAD1E /* Gilroy-ExtraBold.otf */; };
+		74F97CEEC1454A16B938FA12 /* Gilroy-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 43FE5A46CB28492F8E5E83E7 /* Gilroy-Light.otf */; };
+		874AE713B7274CCCADE5A183 /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C204327B96C34814A068B0C5 /* Nunito-Bold.ttf */; };
+		59F60F19B0C04BFDA4668C25 /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA3DA31438C446DEACB8D0E7 /* Nunito-Regular.ttf */; };
+		7E2C7DC6BDB0404F9BFE69BA /* Nunito-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8B640F68BB794471AC06061D /* Nunito-SemiBold.ttf */; };
+		05B9D0856150403DA0B446FB /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 32A24F89CAF14011965686DB /* Poppins-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +79,14 @@
 		E21C2CED997E40BCB154305C /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
+		2229D22C286247439EC96F66 /* Calibri-Bold.ttf */ = {isa = PBXFileReference; name = "Calibri-Bold.ttf"; path = "../assets/fonts/Calibri-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		849E6EAB573E41FEA6BA0BB7 /* Calibri-Regular.ttf */ = {isa = PBXFileReference; name = "Calibri-Regular.ttf"; path = "../assets/fonts/Calibri-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2B5B1B5B565445179F2AAD1E /* Gilroy-ExtraBold.otf */ = {isa = PBXFileReference; name = "Gilroy-ExtraBold.otf"; path = "../assets/fonts/Gilroy-ExtraBold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		43FE5A46CB28492F8E5E83E7 /* Gilroy-Light.otf */ = {isa = PBXFileReference; name = "Gilroy-Light.otf"; path = "../assets/fonts/Gilroy-Light.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C204327B96C34814A068B0C5 /* Nunito-Bold.ttf */ = {isa = PBXFileReference; name = "Nunito-Bold.ttf"; path = "../assets/fonts/Nunito-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		AA3DA31438C446DEACB8D0E7 /* Nunito-Regular.ttf */ = {isa = PBXFileReference; name = "Nunito-Regular.ttf"; path = "../assets/fonts/Nunito-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8B640F68BB794471AC06061D /* Nunito-SemiBold.ttf */ = {isa = PBXFileReference; name = "Nunito-SemiBold.ttf"; path = "../assets/fonts/Nunito-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		32A24F89CAF14011965686DB /* Poppins-Regular.ttf */ = {isa = PBXFileReference; name = "Poppins-Regular.ttf"; path = "../assets/fonts/Poppins-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +182,14 @@
 				1FD4C9650C394935A9A484AB /* Octicons.ttf */,
 				69F4DC81A295499DAC76AAD3 /* SimpleLineIcons.ttf */,
 				ADB18E18DB9A4959BB5BC646 /* Zocial.ttf */,
+				2229D22C286247439EC96F66 /* Calibri-Bold.ttf */,
+				849E6EAB573E41FEA6BA0BB7 /* Calibri-Regular.ttf */,
+				2B5B1B5B565445179F2AAD1E /* Gilroy-ExtraBold.otf */,
+				43FE5A46CB28492F8E5E83E7 /* Gilroy-Light.otf */,
+				C204327B96C34814A068B0C5 /* Nunito-Bold.ttf */,
+				AA3DA31438C446DEACB8D0E7 /* Nunito-Regular.ttf */,
+				8B640F68BB794471AC06061D /* Nunito-SemiBold.ttf */,
+				32A24F89CAF14011965686DB /* Poppins-Regular.ttf */,
 			);
 			name = Resources;
 			path = "";
@@ -355,6 +379,14 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				9703069B279543CD89E18615 /* Calibri-Bold.ttf in Resources */,
+				74D2539B90C64BC6BE81B559 /* Calibri-Regular.ttf in Resources */,
+				26A761EFC52D49F19A87CBD2 /* Gilroy-ExtraBold.otf in Resources */,
+				74F97CEEC1454A16B938FA12 /* Gilroy-Light.otf in Resources */,
+				874AE713B7274CCCADE5A183 /* Nunito-Bold.ttf in Resources */,
+				59F60F19B0C04BFDA4668C25 /* Nunito-Regular.ttf in Resources */,
+				7E2C7DC6BDB0404F9BFE69BA /* Nunito-SemiBold.ttf in Resources */,
+				05B9D0856150403DA0B446FB /* Poppins-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
