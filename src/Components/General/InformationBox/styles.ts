@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { Colors } from '../../../Theme';
+import { Colors, FontFamily } from '../../../Theme';
 
 export default StyleSheet.create({
   informationContainer: {
@@ -24,6 +24,6 @@ export default StyleSheet.create({
   },
   text: {
     fontSize: 14,
-    fontFamily: 'Nunito-Regular',
+    fontFamily: FontFamily.base,
   },
 });
