@@ -4,8 +4,11 @@ import React, { useState } from 'react';
 import CenterView from '../CenterView';
 import { PhoneInput, Input, Textarea } from 'react-native-bob-design';
 import { View } from 'react-native';
+import { withKnobs } from '@storybook/addon-ondevice-knobs';
+import { text } from '@storybook/addon-knobs';
 
 storiesOf('Inputs', module)
+  .addDecorator(withKnobs)
   .addDecorator((getStory) => <CenterView>{getStory()}</CenterView>)
   .add('PhoneInput', () =>
     React.createElement(() => {
@@ -15,15 +18,15 @@ storiesOf('Inputs', module)
           <PhoneInput
             staticLabel={false}
             onChangeText={setPhone}
-            label={'Phone'}
+            label={text('Label', 'Phone Number')}
             style={{ marginBottom: 5 }}
             value={phone}
           />
           <PhoneInput
             staticLabel={false}
             onChangeText={setPhone}
-            label="Phone"
-            error={'This field is required'}
+            label={text('Label', 'Phone Number')}
+            error={text('Error', 'This field is required')}
             style={{ marginBottom: 5 }}
             value={phone}
           />
