@@ -7,7 +7,7 @@ React Native Bob Design System
 Add in package.json
 
 ```json
-"react-native-bob-design": "git+ssh://git@gitlab.com:multinode/md/react-native-bob-design.git#0.1.5"
+"react-native-bob-design": "git+ssh://git@gitlab.com:multinode/md/react-native-bob-design.git#{{version}}"
 ```
 
 ## Usage
