@@ -1,0 +1,88 @@
+/* eslint-disable react-native/no-inline-styles */
+import { storiesOf } from '@storybook/react-native';
+import React, { useState } from 'react';
+import CenterView from '../CenterView';
+import { PhoneInput, Input, Textarea } from 'react-native-bob-design';
+import { View } from 'react-native';
+import { withKnobs } from '@storybook/addon-ondevice-knobs';
+import { text } from '@storybook/addon-knobs';
+
+storiesOf('Inputs', module)
+  .addDecorator(withKnobs)
+  .addDecorator((getStory) => <CenterView>{getStory()}</CenterView>)
+  .add('PhoneInput', () =>
+    React.createElement(() => {
+      const [phone, setPhone] = useState();
+      return (
+        <View>
+          <PhoneInput
+            staticLabel={false}
+            onChangeText={setPhone}
+            label={text('Phone Label 1', 'Phone Number')}
+            style={{ marginBottom: 5 }}
+            value={phone}
+          />
+          <PhoneInput
+            staticLabel={false}
+            onChangeText={setPhone}
+            label={text('Phone Label 2', 'Phone Number')}
+            error={text('Error', 'This field is required')}
+            style={{ marginBottom: 5 }}
+            value={phone}
+          />
+        </View>
+      );
+    })
+  )
+  .add('TextInput', () =>
+    React.createElement(() => {
+      const [firstName, setFirstName] = useState();
+      const [lastName, setLastName] = useState();
+      return (
+        <View>
+          <Input
+            staticLabel={false}
+            error={false}
+            value={lastName}
+            style={{ marginBottom: 5 }}
+            onChangeText={setLastName}
+            label={'Last Name'}
+          />
+          <Input
+            staticLabel={false}
+            value={firstName}
+            onChangeText={setFirstName}
+            error={'This field is required'}
+            style={{ marginBottom: 5 }}
+            label={'First Name'}
+          />
+        </View>
+      );
+    })
+  )
+  .add('Textarea', () =>
+    React.createElement(() => {
+      const [description, setDescription] = useState();
+      return (
+        <View>
+          <Textarea
+            staticLabel={true}
+            hint={'...'}
+            error={false}
+            value={description}
+            style={{ marginBottom: 5 }}
+            onChangeText={setDescription}
+            label={'Description'}
+          />
+          <Textarea
+            staticLabel={true}
+            value={description}
+            onChangeText={setDescription}
+            error={'This field is required'}
+            style={{ marginBottom: 5 }}
+            label={'Description'}
+          />
+        </View>
+      );
+    })
+  );

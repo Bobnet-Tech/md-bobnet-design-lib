@@ -1,8 +1,9 @@
 {
   "compilerOptions": {
     "baseUrl": "./",
+    "experimentalDecorators": true,
     "paths": {
-      "react-native-bob-design": ["./src/index"]
+      "react-native-bob-design": ["./src/index"],
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
@@ -21,7 +22,8 @@
     "noUnusedParameters": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
-    "strict": true,
-    "target": "esnext"
+    "strict": false,
+    "target": "esnext",
   }
 }
+

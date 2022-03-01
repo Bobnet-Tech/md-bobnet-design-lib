@@ -4,19 +4,16 @@ React Native Bob Design System
 
 ## Installation
 
-```sh
-npm install react-native-bob-design
+Add in package.json
+
+```json
+"react-native-bob-design": "git+ssh://git@gitlab.com:multinode/md/react-native-bob-design.git#{{version}}"
 ```
 
 ## Usage
+### Components
+- InformationBox
 
-```js
-import { multiply } from "react-native-bob-design";
-
-// ...
-
-const result = await multiply(3, 7);
-```
 
 ## Contributing
 
