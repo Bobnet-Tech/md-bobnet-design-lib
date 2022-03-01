@@ -11,8 +11,17 @@ Add in package.json
 ```
 
 ## Usage
+```ts
+import {InformationBox, CustomRadio, InformationBox} from 'react-native-bob-design'
+```
 ### Components
 - InformationBox
+- CustomCheckbox
+- CustomRadio
+- Input
+- PasswordInput
+- PhoneInput
+- Textarea
 
 
 ## Contributing
@@ -21,4 +30,4 @@ See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the 
 
 ## License
 
-MIT
+BOBNET
