@@ -18,14 +18,14 @@ storiesOf('Inputs', module)
           <PhoneInput
             staticLabel={false}
             onChangeText={setPhone}
-            label={text('Label', 'Phone Number')}
+            label={text('Phone Label 1', 'Phone Number')}
             style={{ marginBottom: 5 }}
             value={phone}
           />
           <PhoneInput
             staticLabel={false}
             onChangeText={setPhone}
-            label={text('Label', 'Phone Number')}
+            label={text('Phone Label 2', 'Phone Number')}
             error={text('Error', 'This field is required')}
             style={{ marginBottom: 5 }}
             value={phone}
