@@ -64,6 +64,8 @@
     "husky": "^6.0.0",
     "install-peers-cli": "^2.2.0",
     "jest": "^26.0.1",
+    "lottie-ios": "^3.2.3",
+    "lottie-react-native": "^5.0.1",
     "pod-install": "^0.1.0",
     "postinstall-postinstall": "^2.1.0",
     "prettier": "^2.0.5",
@@ -76,12 +78,14 @@
     "typescript": "^4.1.3"
   },
   "peerDependencies": {
+    "@react-native-picker/picker": "*",
     "@react-navigation/native": "*",
     "react": "*",
     "react-native": "*",
     "react-native-reanimated": "*",
     "react-native-vector-icons": "*",
-    "@react-native-picker/picker": "*"
+    "lottie-ios": "*",
+    "lottie-react-native": "*"
   },
   "jest": {
     "preset": "react-native",
@@ -157,8 +161,8 @@
     ]
   },
   "dependencies": {
-    "react-native-floating-label-input": "^1.3.11",
     "patch-package": "^6.4.7",
+    "react-native-floating-label-input": "^1.3.11",
     "react-native-input-spinner": "^1.7.12",
     "react-native-phone-input": "^1.3.2",
     "react-native-progress": "^5.0.0",
