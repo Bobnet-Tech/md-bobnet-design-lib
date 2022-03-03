@@ -45,10 +45,10 @@ const Button = ({
         break;
     }
     return {
-      button: { ...styles[buttonKey], ...style },
-      text: { ...styles[textKey], ...textStyle },
+      button: styles[buttonKey],
+      text: styles[textKey],
     };
-  }, [style, textStyle, type, outlined]);
+  }, [type, outlined]);
   console.log(currentStyles);
   return (
     <TouchableOpacity
@@ -57,10 +57,12 @@ const Button = ({
       activeOpacity={0.7}
       disabled={isLoading}
     >
-      <View style={[styles.button, currentStyles.button]}>
+      <View style={[styles.button, currentStyles.button, style]}>
         {isLoading && <Loading outlined={outlined} />}
         {!isLoading && (
-          <Text style={[styles.text, currentStyles.text]}>{text}</Text>
+          <Text style={[styles.text, currentStyles.text, textStyle]}>
+            {text}
+          </Text>
         )}
       </View>
     </TouchableOpacity>

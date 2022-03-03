@@ -8,6 +8,7 @@ export default StyleSheet.create({
     paddingVertical: 10,
     borderRadius: 10,
   },
+  text: {},
   loadingContainer: {
     width: 90,
     paddingVertical: 10,
