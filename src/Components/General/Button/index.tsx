@@ -49,7 +49,6 @@ const Button = ({
       text: styles[textKey],
     };
   }, [type, outlined]);
-  console.log(currentStyles);
   return (
     <TouchableOpacity
       testID={testID}
