@@ -11,4 +11,10 @@ export default StyleSheet.create({
     opacity: 1,
     alignItems: 'center',
   },
+  disabled: {
+    opacity: 0.5,
+  },
+  disabledText: {
+    opacity: 0.5,
+  },
 });

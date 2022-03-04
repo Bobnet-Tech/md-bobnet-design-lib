@@ -1,4 +1,3 @@
-/* eslint-disable react/require-default-props */
 import { Colors } from '../../../Theme';
 import React from 'react';
 import {
@@ -32,15 +31,22 @@ const CustomCheckbox = ({
     <View style={containerStyles}>
       <TouchableOpacity
         disabled={disabled}
-        style={styles.button}
+        style={[styles.button, disabled ? styles.disabled : {}]}
         onPress={onToggle}
       >
         <Ionicons
           name={checked ? 'md-checkbox' : 'md-square-outline'}
           size={23}
-          color={fillColor}
+          color={disabled ? Colors.disabled : fillColor}
         />
-        <Text style={[styles.defaultText, labelStyles]} numberOfLines={3}>
+        <Text
+          style={[
+            styles.defaultText,
+            labelStyles,
+            disabled ? styles.disabledText : {},
+          ]}
+          numberOfLines={3}
+        >
           {label}
         </Text>
       </TouchableOpacity>
