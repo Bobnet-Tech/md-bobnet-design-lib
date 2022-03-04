@@ -14,12 +14,14 @@ interface Props {
   disabled: boolean;
   onToggle: any;
   label: string;
+  fillColor: string;
   containerStyles?: StyleProp<ViewStyle>;
 }
 const CustomRadio = ({
   checked,
   disabled,
   onToggle,
+  fillColor,
   label,
   containerStyles,
 }: Props) => {
@@ -33,7 +35,7 @@ const CustomRadio = ({
         <Ionicons
           name={checked ? 'md-radio-button-on' : 'md-radio-button-off'}
           size={23}
-          color={disabled ? Colors.disabled : Colors.secondary}
+          color={disabled ? Colors.disabled : fillColor}
         />
         <Text style={[styles.defaultText, disabled ? styles.disabledText : {}]}>
           {label}
@@ -41,5 +43,8 @@ const CustomRadio = ({
       </TouchableOpacity>
     </View>
   );
+};
+CustomRadio.defaultProps = {
+  fillColor: Colors.secondary,
 };
 export default CustomRadio;
