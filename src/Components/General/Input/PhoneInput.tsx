@@ -34,9 +34,17 @@ const PhoneNumberInput = (props: Props & TextInputProps) => {
       <PhoneInput
         initialCountry={'ro'}
         {...props}
+        renderFlag={({}) => {
+          return (
+            <View style={styles.customFlag}>
+              <Text style={styles.customFlagText}>+40</Text>
+            </View>
+          );
+        }}
         textComponent={FloatingLabelInput}
-        allowZeroAfterCountryCode={false}
+        allowZeroAfterCountryCode={true}
         autoFormat={true}
+        offset={-1}
         countriesList={countries}
         flagStyle={styles.flag}
         textProps={{
@@ -46,7 +54,7 @@ const PhoneNumberInput = (props: Props & TextInputProps) => {
           keyboardType: 'phone-pad',
           autoCapitalize: 'none',
           returnKeyType: 'next',
-          maxLength: 9,
+          maxLength: 10,
           containerStyles: styles.container,
           animationDuration: 300,
           ...props,

@@ -5,9 +5,8 @@ export default StyleSheet.create({
   container: {
     flexDirection: 'row',
     borderColor: Colors.black,
-
-    borderWidth: StyleSheet.hairlineWidth,
-    borderRadius: 12,
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomColor: Colors.gray,
     paddingHorizontal: 11,
     backgroundColor: Colors.white,
     paddingTop: 10,
@@ -17,7 +16,7 @@ export default StyleSheet.create({
     marginVertical: 2,
   },
   labelStyles: {
-    fontFamily: FontFamily.bold,
+    fontFamily: FontFamily.base,
     color: '#000000',
   },
   leftIcon: {
@@ -36,4 +35,18 @@ export default StyleSheet.create({
     color: Colors.error,
   },
   textarea: { height: 150, textAlignVertical: 'top', color: 'black' },
+  customFlag: {
+    backgroundColor: 'white',
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    paddingVertical: 13.5,
+    marginVertical: 2,
+    borderBottomColor: Colors.gray,
+  },
+  customFlagText: {
+    fontFamily: FontFamily.base,
+    fontSize: 15,
+    paddingLeft: 10,
+    textAlign: 'center',
+    color: Colors.gray,
+  },
 });
