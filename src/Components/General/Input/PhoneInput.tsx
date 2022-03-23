@@ -1,4 +1,3 @@
-/* eslint-disable react/require-default-props */
 import React from 'react';
 import { Text, TextInputProps, View } from 'react-native';
 import PhoneInput from 'react-native-phone-input';
