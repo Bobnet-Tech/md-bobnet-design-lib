@@ -103,6 +103,12 @@ class Popup extends Component<any, any> {
 
   handleImage(type) {
     switch (type) {
+      case 'SadFace':
+        return require('../../../../Assets/SadFace.png');
+      case 'HappyFace':
+        return require('../../../../Assets/HappyFace.png');
+      case 'HappyFace':
+        return require('../../../../Assets/Success.png');
       case 'Success':
         return require('../../../../Assets/Success.png');
       case 'Danger':
@@ -122,7 +128,9 @@ class Popup extends Component<any, any> {
           style={[styles.Button, styles[type]]}
           onPress={callback}
         >
-          <Text style={styles.TextButton}>{buttonText}</Text>
+          <Text style={[styles.TextButton, styles['Text' + type]]}>
+            {buttonText}
+          </Text>
         </TouchableOpacity>
       );
     } else {
@@ -205,8 +213,8 @@ const styles = StyleSheet.create({
     marginTop: -120,
   },
   Image: {
-    width: 150,
-    height: 80,
+    width: 130,
+    height: 65,
     position: 'absolute',
     top: 20,
   },
@@ -222,25 +230,47 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   Button: {
-    borderRadius: 50,
+    borderRadius: 10,
     height: 40,
     width: 130,
     justifyContent: 'center',
     alignItems: 'center',
+    borderWidth: 1,
     marginTop: 30,
   },
   TextButton: {
-    color: '#fff',
+    color: Colors.primary,
     fontFamily: FontFamily.bold,
   },
+  TextSuccess: {
+    color: Colors.secondary,
+  },
+  TextDanger: {
+    color: Colors.error,
+  },
+  TextWarning: {
+    color: Colors.warning,
+  },
+  TextSadFace: {
+    text: Colors.warning,
+  },
+  TextHappyFace: {
+    color: Colors.secondary,
+  },
   Success: {
-    backgroundColor: Colors.secondary,
+    borderColor: Colors.secondary,
   },
   Danger: {
-    backgroundColor: Colors.error,
+    borderColor: Colors.error,
   },
   Warning: {
-    backgroundColor: Colors.warning,
+    borderColor: Colors.warning,
+  },
+  SadFace: {
+    borderColor: Colors.warning,
+  },
+  HappyFace: {
+    borderColor: Colors.secondary,
   },
 });
 
