@@ -1,10 +1,10 @@
+// @ts-nocheck
 import React, { Component } from 'react';
-import { View, ViewPropTypes } from 'react-native';
-import PropTypes from 'prop-types';
+import { View } from 'react-native';
 
 import Popup from '../Popup';
 
-class Root extends Component {
+class Root extends Component<any, any> {
   render() {
     return (
       <View ref={(c) => (this._root = c)} style={{ flex: 1 }} {...this.props}>
@@ -18,14 +18,5 @@ class Root extends Component {
     );
   }
 }
-
-Root.propTypes = {
-  ...ViewPropTypes,
-  style: PropTypes.oneOfType([
-    PropTypes.object,
-    PropTypes.number,
-    PropTypes.array,
-  ]),
-};
 
 export default Root;

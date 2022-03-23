@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { Component } from 'react';
 import {
   View,
@@ -13,7 +14,7 @@ import { Colors, FontFamily } from '../../../../Theme';
 const WIDTH = Dimensions.get('screen').width;
 const HEIGHT = Dimensions.get('screen').height;
 
-class Popup extends Component {
+class Popup extends Component<any, any> {
   static popupInstance;
 
   static show({ ...config }) {
@@ -24,7 +25,7 @@ class Popup extends Component {
     this.popupInstance.hidePopup();
   }
 
-  state = {
+  state: any = {
     positionView: new Animated.Value(HEIGHT),
     opacity: new Animated.Value(0),
     positionPopup: new Animated.Value(HEIGHT),
@@ -112,7 +113,7 @@ class Popup extends Component {
   }
 
   render() {
-    const { title, type, textBody, buttonText, callback, background } =
+    const { title, type, textBody, buttonText, callback, background }: any =
       this.state;
     let el = null;
     if (this.state.button) {
