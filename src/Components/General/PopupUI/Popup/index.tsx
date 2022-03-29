@@ -107,8 +107,6 @@ class Popup extends Component<any, any> {
         return require('../../../../Assets/SadFace.png');
       case 'HappyFace':
         return require('../../../../Assets/HappyFace.png');
-      case 'HappyFace':
-        return require('../../../../Assets/Success.png');
       case 'Success':
         return require('../../../../Assets/Success.png');
       case 'Danger':
@@ -252,7 +250,7 @@ const styles = StyleSheet.create({
     color: Colors.warning,
   },
   TextSadFace: {
-    text: Colors.warning,
+    color: Colors.error,
   },
   TextHappyFace: {
     color: Colors.secondary,
