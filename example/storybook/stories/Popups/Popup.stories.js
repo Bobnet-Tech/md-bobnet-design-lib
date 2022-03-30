@@ -1,10 +1,9 @@
 /* eslint-disable react-native/no-inline-styles */
 import { storiesOf } from '@storybook/react-native';
-import React, { useEffect } from 'react';
-import CenterView from '../CenterView';
+import React from 'react';
 import { PopupRoot, Button, Popup } from 'react-native-bob-design';
 import { withKnobs } from '@storybook/addon-ondevice-knobs';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 
 storiesOf('Popups', module)
   .addDecorator(withKnobs)
@@ -53,6 +52,12 @@ storiesOf('Popups', module)
               text="HappyFace"
               style={{ margin: 10 }}
               onPress={() => showPopup('HappyFace')}
+            />
+            <Button
+              type="primary"
+              text="NeutralFace"
+              style={{ margin: 10 }}
+              onPress={() => showPopup('NeutralFace')}
             />
           </View>
         </PopupRoot>
