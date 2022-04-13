@@ -5,3 +5,4 @@ import './Button/Button.stories';
 import './CheckBox/CheckBox.stories';
 import './Radio/Radio.stories';
 import './Popups/Popup.stories';
+import './CodeScanner/CodeScanner.stories';
