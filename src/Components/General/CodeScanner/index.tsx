@@ -10,7 +10,9 @@ import styles from './styles';
 // @ts-ignore
 import { Barcode, useScanBarcodes } from 'vision-camera-code-scanner';
 // @ts-ignore
+
 import { BarcodeFormat } from 'vision-camera-code-scanner';
+
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
 interface Props {
@@ -71,7 +73,7 @@ const CodeScanner = ({
           frameProcessor={frameProcessor}
           frameProcessorFps={scanFrequency}
         />
-        <CustomInfo />
+        {!!CustomInfo && <CustomInfo />}
         <TouchableOpacity style={styles.closeButton} onPress={onClose}>
           <FontAwesome name="close" color="white" size={20} />
         </TouchableOpacity>
