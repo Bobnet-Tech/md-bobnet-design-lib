@@ -1,17 +1,16 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-// import QrTarget from '@/Assets/Svgs/QrTarget';
 import React, { useEffect } from 'react';
 import { StyleSheet, TouchableOpacity, Vibration, View } from 'react-native';
+// @ts-ignore
 import { useCameraDevices } from 'react-native-vision-camera';
+// @ts-ignore
 import { Camera } from 'react-native-vision-camera';
-
 import Modal from 'react-native-modal';
 import styles from './styles';
-import {
-  Barcode,
-  BarcodeFormat,
-  useScanBarcodes,
-} from 'vision-camera-code-scanner';
+// @ts-ignore
+import { Barcode, useScanBarcodes } from 'vision-camera-code-scanner';
+// @ts-ignore
+import { BarcodeFormat } from 'vision-camera-code-scanner';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
 interface Props {

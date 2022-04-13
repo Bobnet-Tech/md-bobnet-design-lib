@@ -86,8 +86,8 @@
     "react-native": "*",
     "react-native-reanimated": "*",
     "react-native-vector-icons": "*",
-    "react-native-vision-camera": "*",
-    "vision-camera-code-scanner": "*"
+    "react-native-vision-camera": "^2.13.2",
+    "vision-camera-code-scanner": "^0.2.0"
   },
   "jest": {
     "preset": "react-native",
@@ -169,8 +169,6 @@
     "react-native-modal": "^13.0.1",
     "react-native-phone-input": "^1.3.2",
     "react-native-progress": "^5.0.0",
-    "react-native-responsive-screen": "^1.4.2",
-    "react-native-vision-camera": "^2.13.2",
-    "vision-camera-code-scanner": "^0.2.0"
+    "react-native-responsive-screen": "^1.4.2"
   }
 }
