@@ -3,7 +3,6 @@ export default StyleSheet.create({
   modalContent: {
     flex: 1,
     backgroundColor: '#fff',
-    ...StyleSheet.absoluteFill,
   },
   subTitle: {
     textAlign: 'center',
