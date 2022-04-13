@@ -7,16 +7,21 @@ import { Camera } from 'react-native-vision-camera';
 
 import Modal from 'react-native-modal';
 import styles from './styles';
-import { BarcodeFormat, useScanBarcodes } from 'vision-camera-code-scanner';
+import {
+  Barcode,
+  BarcodeFormat,
+  useScanBarcodes,
+} from 'vision-camera-code-scanner';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
 interface Props {
-  onScan: (data: string) => void;
+  onScan: (data: Barcode) => void;
   onClose: () => void;
+  visible: boolean;
   scanFrequency?: number;
-  CustomInfo?: React.ReactNode;
+  CustomInfo?: any;
   showQrTarget?: boolean;
-  codeTypes?: string[];
+  codeTypes?: BarcodeFormat[];
   closeOnScan?: boolean;
 }
 const CodeScanner = ({
@@ -27,7 +32,7 @@ const CodeScanner = ({
   onClose,
   scanFrequency,
   closeOnScan,
-}: any) => {
+}: Props) => {
   const [hasPermission, setHasPermission] = React.useState(false);
   const devices = useCameraDevices();
   const device = devices.back;
