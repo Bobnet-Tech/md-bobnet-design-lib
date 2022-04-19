@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react-native';
 import React, { useState } from 'react';
 import { Text, View } from 'react-native';
 import { CodeScanner, Button } from 'react-native-bob-design';
+import { BarcodeFormat } from 'vision-camera-code-scanner';
 
 storiesOf('CodeScanner', module)
   .addDecorator(withKnobs)
@@ -46,6 +47,7 @@ storiesOf('CodeScanner', module)
                 Custom Info
               </Text>
             )}
+            codeTypes={[BarcodeFormat.ALL_FORMATS]}
           />
         </View>
       );
