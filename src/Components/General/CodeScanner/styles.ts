@@ -1,4 +1,6 @@
 import { StyleSheet } from 'react-native';
+import { widthPercentageToDP } from 'react-native-responsive-screen';
+
 export default StyleSheet.create({
   modalContent: {
     flex: 1,
@@ -24,5 +26,11 @@ export default StyleSheet.create({
     borderRadius: 1500,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  qrTarget: {
+    flex: 1,
+    alignSelf: 'center',
+    position: 'absolute',
+    top: widthPercentageToDP(50),
   },
 });

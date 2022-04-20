@@ -14,6 +14,8 @@ import { Barcode, useScanBarcodes } from 'vision-camera-code-scanner';
 import { BarcodeFormat } from 'vision-camera-code-scanner';
 
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import { widthPercentageToDP } from 'react-native-responsive-screen';
+import QrTarget from '../QrTarget';
 
 interface Props {
   onScan: (data: Barcode) => void;
@@ -33,6 +35,7 @@ const CodeScanner = ({
   onClose,
   scanFrequency,
   closeOnScan,
+  showQrTarget,
 }: Props) => {
   const [hasPermission, setHasPermission] = React.useState(false);
   const devices = useCameraDevices();
@@ -77,6 +80,14 @@ const CodeScanner = ({
         <TouchableOpacity style={styles.closeButton} onPress={onClose}>
           <FontAwesome name="close" color="white" size={20} />
         </TouchableOpacity>
+        {showQrTarget && (
+          <QrTarget
+            style={styles.qrTarget}
+            color={'rgba(0,0,0,0.6)'}
+            width={widthPercentageToDP(65)}
+            height={widthPercentageToDP(65)}
+          />
+        )}
       </View>
     </Modal>
   );
