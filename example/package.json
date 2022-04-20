@@ -18,6 +18,7 @@
     "react": "17.0.2",
     "react-native": "0.67.3",
     "react-native-reanimated": "^2.4.1",
+    "react-native-svg": "^12.3.0",
     "react-native-vector-icons": "^9.1.0",
     "react-native-vision-camera": "^2.13.2",
     "vision-camera-code-scanner": "^0.2.0"
