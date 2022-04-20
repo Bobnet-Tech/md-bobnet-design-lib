@@ -11,6 +11,7 @@ const QrTarget = (props: SvgProps) => (
     viewBox="0 0 512 512"
     style={[
       {
+        // @ts-ignore
         enableBackground: 'new 0 0 512 512',
       },
       props.style,
