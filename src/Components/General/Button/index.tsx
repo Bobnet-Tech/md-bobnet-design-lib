@@ -14,6 +14,7 @@ interface Props {
   type: 'primary' | 'secondary' | 'link';
   bordered?: boolean;
   text: string;
+  disabled?: boolean;
   isLoading?: boolean;
   outlined?: boolean;
   style?: StyleProp<ViewStyle>;
@@ -25,6 +26,7 @@ const Button = ({
   type = 'primary',
   text = '',
   isLoading,
+  disabled = false,
   style = {},
   textStyle = {},
   outlined = false,
@@ -54,7 +56,7 @@ const Button = ({
       testID={testID}
       onPress={onPress}
       activeOpacity={0.7}
-      disabled={isLoading}
+      disabled={disabled || isLoading}
     >
       <View style={[styles.button, currentStyles.button, style]}>
         {isLoading && <Loading outlined={outlined} />}
