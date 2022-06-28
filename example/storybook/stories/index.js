@@ -1,5 +1,6 @@
 import './Welcome/Welcome.stories';
 import './InformationBox/InformationBox.stories';
+import './FormValidation/RegisterValidation.stories';
 import './TextInput/TextInput.stories';
 import './Button/Button.stories';
 import './CheckBox/CheckBox.stories';

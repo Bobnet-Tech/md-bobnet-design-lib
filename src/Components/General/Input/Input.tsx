@@ -12,6 +12,7 @@ interface Props {
   error?: string | undefined | null;
   hint?: string;
   customLeftComponent: any;
+  customRightComponent: any;
 }
 
 const Input = (props: Props & TextInputProps) => {
@@ -24,7 +25,7 @@ const Input = (props: Props & TextInputProps) => {
       <FloatingLabelInput
         staticLabel={props.staticLabel}
         labelStyles={labelStyles}
-        containerStyles={styles.container}
+        containerStyles={props.error ? styles.errorContainer : styles.container}
         label={props.label}
         animationDuration={300}
         autoCapitalize={props.autoCapitalize}
@@ -41,6 +42,7 @@ const Input = (props: Props & TextInputProps) => {
             />
           ))
         }
+        rightComponent={props.customRightComponent || null}
         {...props}
       />
       {props.error && <Text style={styles.error}>{props.error}</Text>}
