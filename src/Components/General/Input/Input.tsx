@@ -1,6 +1,5 @@
 import React from 'react';
 import { Text, TextInputProps, View } from 'react-native';
-
 import { FloatingLabelInput } from 'react-native-floating-label-input';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from './styles';
@@ -12,6 +11,7 @@ interface Props {
   staticLabel?: boolean;
   error?: string | undefined | null;
   hint?: string;
+  customLeftComponent: any;
 }
 
 const Input = (props: Props & TextInputProps) => {
@@ -32,13 +32,14 @@ const Input = (props: Props & TextInputProps) => {
         hint={props.hint}
         hintTextColor="#c1c1c1"
         leftComponent={
-          props.leftIcon && (
+          props.customLeftComponent ||
+          (props.leftIcon && (
             <Icon
               name={props.leftIcon}
               style={styles.leftIcon}
               color={props.leftIconColor}
             />
-          )
+          ))
         }
         {...props}
       />

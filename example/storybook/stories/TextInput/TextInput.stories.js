@@ -2,7 +2,12 @@
 import { storiesOf } from '@storybook/react-native';
 import React, { useState } from 'react';
 import CenterView from '../CenterView';
-import { PhoneInput, Input, Textarea } from 'react-native-bob-design';
+import {
+  PhoneInput,
+  Input,
+  Textarea,
+  PasswordInput,
+} from 'react-native-bob-design';
 import { View } from 'react-native';
 import { withKnobs } from '@storybook/addon-ondevice-knobs';
 import { text } from '@storybook/addon-knobs';
@@ -76,6 +81,29 @@ storiesOf('Inputs', module)
           />
           <Textarea
             staticLabel={true}
+            value={description}
+            onChangeText={setDescription}
+            error={'This field is required'}
+            style={{ marginBottom: 5 }}
+            label={'Description'}
+          />
+        </View>
+      );
+    })
+  )
+  .add('Password Input', () =>
+    React.createElement(() => {
+      const [description, setDescription] = useState();
+      return (
+        <View>
+          <PasswordInput
+            error={false}
+            value={description}
+            style={{ marginBottom: 5 }}
+            onChangeText={setDescription}
+            label={'Description'}
+          />
+          <PasswordInput
             value={description}
             onChangeText={setDescription}
             error={'This field is required'}

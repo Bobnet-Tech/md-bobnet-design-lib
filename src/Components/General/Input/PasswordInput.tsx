@@ -1,8 +1,10 @@
 import React from 'react';
 import { Text, TextInputProps, View } from 'react-native';
 import { FloatingLabelInput } from 'react-native-floating-label-input';
-import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from './styles';
+import ShowPass from '../../../Assets/ShowPass';
+import HidePass from '../../../Assets/HidePass';
+import PasswordIcon from '../../../Assets/PasswordIcon';
 
 interface Props {
   label?: any;
@@ -11,6 +13,8 @@ interface Props {
   staticLabel?: boolean;
   style?: any;
   error?: string | undefined | null;
+  customShowPassword: any;
+  customHidePassword: any;
 }
 
 const PasswordInput = (props: Props & TextInputProps) => {
@@ -26,9 +30,9 @@ const PasswordInput = (props: Props & TextInputProps) => {
         labelStyles={labelStyles}
         containerStyles={styles.container}
         isPassword
-        leftComponent={<Icon name="lock" style={styles.leftIcon} />}
-        customShowPasswordComponent={<Text>Show</Text>}
-        customHidePasswordComponent={<Text>Hide</Text>}
+        leftComponent={<PasswordIcon />}
+        customShowPasswordComponent={props.customShowPassword}
+        customHidePasswordComponent={props.customHidePassword}
         {...props}
       />
       {props.error && <Text style={styles.error}>{props.error}</Text>}
@@ -38,9 +42,11 @@ const PasswordInput = (props: Props & TextInputProps) => {
 
 PasswordInput.defaultProps = {
   label: '',
-  staticLabel: true,
+  staticLabel: false,
   error: null,
   style: undefined,
+  customShowPassword: <HidePass />,
+  customHidePassword: <ShowPass />,
 };
 
 export default PasswordInput;
