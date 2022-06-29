@@ -3,6 +3,8 @@ import { Text, TextInputProps, View } from 'react-native';
 import { FloatingLabelInput } from 'react-native-floating-label-input';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from './styles';
+import PassedIcon from '../../../Assets/PassedIcon';
+import ErrorIcon from '../../../Assets/ErrorIcon';
 
 interface Props {
   label?: any;
@@ -12,7 +14,7 @@ interface Props {
   error?: string | undefined | null;
   hint?: string;
   customLeftComponent: any;
-  customRightComponent: any;
+  errorCheck: boolean;
 }
 
 const Input = (props: Props & TextInputProps) => {
@@ -25,7 +27,11 @@ const Input = (props: Props & TextInputProps) => {
       <FloatingLabelInput
         staticLabel={props.staticLabel}
         labelStyles={labelStyles}
-        containerStyles={props.error ? styles.errorContainer : styles.container}
+        containerStyles={
+          (props.errorCheck &&
+            (props.error ? styles.errorContainer : styles.passedContainer)) ||
+          styles.container
+        }
         label={props.label}
         animationDuration={300}
         autoCapitalize={props.autoCapitalize}
@@ -42,7 +48,14 @@ const Input = (props: Props & TextInputProps) => {
             />
           ))
         }
-        rightComponent={props.customRightComponent || null}
+        rightComponent={
+          props.errorCheck &&
+          (props.error ? (
+            <ErrorIcon style={styles.rightIcon} />
+          ) : (
+            <PassedIcon style={styles.rightIcon} />
+          ))
+        }
         {...props}
       />
       {props.error && <Text style={styles.error}>{props.error}</Text>}
@@ -55,6 +68,7 @@ Input.defaultProps = {
   staticLabel: true,
   error: null,
   leftIconColor: 'black',
+  errorCheck: false,
 };
 
 export default Input;

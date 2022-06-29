@@ -3,7 +3,8 @@ import { Text, TextInputProps, View } from 'react-native';
 import PhoneInput from 'react-native-phone-input';
 import { FloatingLabelInput } from 'react-native-floating-label-input';
 import styles from './styles';
-
+import PassedIcon from '../../../Assets/PassedIcon';
+import ErrorIcon from '../../../Assets/ErrorIcon';
 interface Props {
   label?: any;
   onChangeText: any;
@@ -11,6 +12,7 @@ interface Props {
   staticLabel?: boolean;
   error?: string | undefined | null;
   textComponent?: any;
+  errorCheck: boolean;
 }
 
 const countries = [
@@ -29,44 +31,68 @@ const PhoneNumberInput = (props: Props & TextInputProps) => {
     ...(props.staticLabel ? { paddingTop: 10 } : {}),
   };
   return (
-    <View style={props.style}>
-      <PhoneInput
-        initialCountry={'ro'}
-        {...props}
-        renderFlag={({}) => {
-          return (
-            <View style={styles.customFlag}>
-              <Text style={styles.customFlagText}>+40</Text>
-            </View>
-          );
-        }}
-        textComponent={FloatingLabelInput}
-        allowZeroAfterCountryCode={true}
-        autoFormat={true}
-        offset={-1}
-        countriesList={countries}
-        flagStyle={styles.flag}
-        textProps={{
-          label: props.label,
-          staticLabel: props.staticLabel,
-          labelStyles: labelStyles,
-          keyboardType: 'phone-pad',
-          autoCapitalize: 'none',
-          returnKeyType: 'next',
-          maxLength: 10,
-          containerStyles: styles.container,
-          animationDuration: 300,
-          ...props,
-        }}
-        textStyle={styles.container}
-      />
-      {props.error && <Text style={styles.error}>{props.error}</Text>}
-    </View>
+    <>
+      <View style={props.style}>
+        <PhoneInput
+          initialCountry={'ro'}
+          {...props}
+          renderFlag={({}) => {
+            return (
+              <View
+                style={
+                  (props.errorCheck &&
+                    props.error &&
+                    styles.customFlagTouched) ||
+                  styles.customFlag
+                }
+              >
+                <Text style={styles.customFlagText}>+40</Text>
+              </View>
+            );
+          }}
+          textComponent={FloatingLabelInput}
+          allowZeroAfterCountryCode={true}
+          autoFormat={true}
+          offset={-1}
+          countriesList={countries}
+          flagStyle={styles.flag}
+          textProps={{
+            label: props.label,
+            staticLabel: props.staticLabel,
+            labelStyles: labelStyles,
+            keyboardType: 'phone-pad',
+            autoCapitalize: 'none',
+            returnKeyType: 'next',
+            maxLength: 10,
+            containerStyles: styles.container,
+            animationDuration: 300,
+            ...props,
+          }}
+          textStyle={styles.container}
+        />
+        {props.errorCheck &&
+          (props.error ? (
+            <>
+              <ErrorIcon style={styles.rightIconPhone} />
+              <View style={styles.phoneNumberBorderError} />
+            </>
+          ) : (
+            <>
+              <PassedIcon style={styles.rightIconPhone} />
+              <View style={styles.phoneNumberBorderPassed} />
+            </>
+          ))}
+      </View>
+      <View>
+        {props.error && <Text style={styles.error}>{props.error}</Text>}
+      </View>
+    </>
   );
 };
 
 PhoneNumberInput.defaultProps = {
   error: null,
+  errorCheck: false,
 };
 
 export default PhoneNumberInput;

@@ -5,6 +5,8 @@ import styles from './styles';
 import ShowPass from '../../../Assets/ShowPass';
 import HidePass from '../../../Assets/HidePass';
 import PasswordIcon from '../../../Assets/PasswordIcon';
+import PassedIcon from '../../../Assets/PassedIcon';
+import ErrorIcon from '../../../Assets/ErrorIcon';
 
 interface Props {
   label?: any;
@@ -15,6 +17,7 @@ interface Props {
   error?: string | undefined | null;
   customShowPassword: any;
   customHidePassword: any;
+  errorCheck: boolean;
 }
 
 const PasswordInput = (props: Props & TextInputProps) => {
@@ -23,20 +26,52 @@ const PasswordInput = (props: Props & TextInputProps) => {
     ...(props.staticLabel ? { paddingTop: 10 } : {}),
   };
   return (
-    <View style={props.style}>
-      <FloatingLabelInput
-        staticLabel={props.staticLabel}
-        label={props.label}
-        labelStyles={labelStyles}
-        containerStyles={styles.container}
-        isPassword
-        leftComponent={<PasswordIcon />}
-        customShowPasswordComponent={props.customShowPassword}
-        customHidePasswordComponent={props.customHidePassword}
-        {...props}
-      />
-      {props.error && <Text style={styles.error}>{props.error}</Text>}
-    </View>
+    <>
+      <View style={props.style}>
+        <FloatingLabelInput
+          staticLabel={props.staticLabel}
+          label={props.label}
+          labelStyles={labelStyles}
+          containerStyles={styles.container}
+          isPassword
+          leftComponent={<PasswordIcon style={{ marginRight: 5 }} />}
+          customShowPasswordComponent={
+            <View
+              style={{
+                marginRight: props.errorCheck ? 30 : 0,
+              }}
+            >
+              {props.customShowPassword}
+            </View>
+          }
+          customHidePasswordComponent={
+            <View
+              style={{
+                marginRight: props.errorCheck ? 30 : 0,
+              }}
+            >
+              {props.customHidePassword}
+            </View>
+          }
+          {...props}
+        />
+        {props.errorCheck &&
+          (props.error ? (
+            <>
+              <ErrorIcon style={styles.rightIconPhone} />
+              <View style={styles.phoneNumberBorderError} />
+            </>
+          ) : (
+            <>
+              <PassedIcon style={styles.rightIconPhone} />
+              <View style={styles.phoneNumberBorderPassed} />
+            </>
+          ))}
+      </View>
+      <View>
+        {props.error && <Text style={styles.error}>{props.error}</Text>}
+      </View>
+    </>
   );
 };
 
@@ -47,6 +82,7 @@ PasswordInput.defaultProps = {
   style: undefined,
   customShowPassword: <HidePass />,
   customHidePassword: <ShowPass />,
+  errorCheck: false,
 };
 
 export default PasswordInput;

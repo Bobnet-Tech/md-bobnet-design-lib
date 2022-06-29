@@ -2,7 +2,7 @@
 import { storiesOf } from '@storybook/react-native';
 import React from 'react';
 import CenterView from '../CenterView';
-import { Input, PhoneInput } from 'react-native-bob-design';
+import { Input, PhoneInput, PasswordInput } from 'react-native-bob-design';
 import { Text, View } from 'react-native';
 import { withKnobs } from '@storybook/addon-ondevice-knobs';
 import { text } from '@storybook/addon-knobs';
@@ -21,6 +21,7 @@ storiesOf('RegisterValidation', module)
           firstName: '',
           lastName: '',
           dial_code: '+4',
+          password: '',
         },
         validationSchema: yup.object().shape({
           email: yup
@@ -39,10 +40,7 @@ storiesOf('RegisterValidation', module)
             .matches(/^[0-9]+$/, text('invalidPhone'))
             .min(10, text('invalidPhoneLength'))
             .max(10, text('invalidPhoneLength')),
-          askAge: yup.boolean().required(text('ageRequired')),
-          askPrivacyAndPolicy: yup
-            .boolean()
-            .required(text('privacyAndPolicyRequired')),
+          password: yup.string().required(text('requiredPassword')),
         }),
         validateOnChange: false,
         validateOnBlur: true,
@@ -68,10 +66,7 @@ storiesOf('RegisterValidation', module)
             value={formValues.firstName}
             label={text('firstName')}
             leftIcon="user"
-            customRightComponent={
-              touched.firstName &&
-              (errors.firstName ? <Text>error</Text> : <Text>done</Text>)
-            }
+            errorCheck={touched.firstName}
           />
           <Input
             staticLabel={false}
@@ -80,6 +75,7 @@ storiesOf('RegisterValidation', module)
             onChangeText={handleChange('lastName')}
             value={formValues.lastName}
             label={text('lastName')}
+            errorCheck={touched.lastName}
           />
           <Input
             staticLabel={false}
@@ -91,6 +87,7 @@ storiesOf('RegisterValidation', module)
             onChangeText={handleChange('email')}
             value={formValues.email}
             label={text('email')}
+            errorCheck={touched.email}
           />
           <PhoneInput
             staticLabel={false}
@@ -102,6 +99,16 @@ storiesOf('RegisterValidation', module)
             value={formValues.phoneNumber}
             keyboardType={'numeric'}
             label={text('phone')}
+            errorCheck={touched.phoneNumber}
+          />
+          <PasswordInput
+            staticLabel={false}
+            error={touched.password && !!errors.password && errors.password}
+            onBlur={formik.handleBlur('password')}
+            onChangeText={handleChange('password')}
+            value={formValues.password}
+            label={text('password')}
+            errorCheck={touched.password}
           />
         </View>
       );
