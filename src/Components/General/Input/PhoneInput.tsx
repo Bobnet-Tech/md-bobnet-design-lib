@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Text, TextInputProps, View } from 'react-native';
 import PhoneInput from 'react-native-phone-input';
 import { FloatingLabelInput } from 'react-native-floating-label-input';
 import styles from './styles';
 import PassedIcon from '../../../Assets/PassedIcon';
 import ErrorIcon from '../../../Assets/ErrorIcon';
+import PhoneIcon from '../../../Assets/PhoneIcon';
+
 interface Props {
   label?: any;
   onChangeText: any;
@@ -30,6 +32,10 @@ const PhoneNumberInput = (props: Props & TextInputProps) => {
     ...styles.labelStyles,
     ...(props.staticLabel ? { paddingTop: 10 } : {}),
   };
+  const [isFocused, setIsFocused] = useState(false);
+  const onInputFocus = () => {
+    setIsFocused(true);
+  };
   return (
     <>
       <View style={props.style}>
@@ -46,7 +52,8 @@ const PhoneNumberInput = (props: Props & TextInputProps) => {
                   styles.customFlag
                 }
               >
-                <Text style={styles.customFlagText}>+40</Text>
+                <PhoneIcon style={{ marginLeft: 10 }} />
+                {isFocused && <Text style={styles.customFlagText}>+40</Text>}
               </View>
             );
           }}
@@ -66,6 +73,7 @@ const PhoneNumberInput = (props: Props & TextInputProps) => {
             maxLength: 10,
             containerStyles: styles.container,
             animationDuration: 300,
+            onFocus: onInputFocus,
             ...props,
           }}
           textStyle={styles.container}
