@@ -62,6 +62,7 @@ export default StyleSheet.create({
   },
   textarea: { height: 150, textAlignVertical: 'top', color: 'black' },
   customFlag: {
+    flexDirection: 'row',
     backgroundColor: 'white',
     borderBottomWidth: StyleSheet.hairlineWidth,
     paddingVertical: 13.5,
@@ -101,6 +102,7 @@ export default StyleSheet.create({
     borderBottomColor: Colors.secondary,
   },
   customFlagTouched: {
+    flexDirection: 'row',
     backgroundColor: 'white',
     paddingVertical: 13.5,
     marginVertical: 2,
