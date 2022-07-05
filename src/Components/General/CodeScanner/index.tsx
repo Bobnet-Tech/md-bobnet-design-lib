@@ -24,6 +24,11 @@ interface Props {
   scanFrequency?: number;
   CustomInfo?: any;
   showQrTarget?: boolean;
+  qrTargetColor?: string;
+  qrTargetSize?: any;
+  closeIconStyles?: any;
+  qrTargetStyles?: any;
+  closeButtonStyles?: any;
   codeTypes?: BarcodeFormat[];
   closeOnScan?: boolean;
 }
@@ -34,7 +39,12 @@ const CodeScanner = ({
   codeTypes,
   onClose,
   scanFrequency,
+  closeButtonStyles,
+  qrTargetColor,
+  qrTargetSize,
+  closeIconStyles,
   closeOnScan,
+  qrTargetStyles,
   showQrTarget,
 }: Props) => {
   const [hasPermission, setHasPermission] = React.useState(false);
@@ -77,15 +87,21 @@ const CodeScanner = ({
           frameProcessorFps={scanFrequency}
         />
         {!!CustomInfo && <CustomInfo />}
-        <TouchableOpacity style={styles.closeButton} onPress={onClose}>
-          <FontAwesome name="close" color="white" size={20} />
+        <TouchableOpacity
+          style={[styles.closeButton, closeButtonStyles]}
+          onPress={onClose}
+        >
+          <FontAwesome
+            name="close"
+            style={[styles.closeIcon, closeIconStyles]}
+          />
         </TouchableOpacity>
         {showQrTarget && (
           <QrTarget
-            style={styles.qrTarget}
-            color={'rgba(0,0,0,0.6)'}
-            width={widthPercentageToDP(65)}
-            height={widthPercentageToDP(65)}
+            style={[styles.qrTarget, qrTargetStyles]}
+            color={qrTargetColor}
+            width={qrTargetSize}
+            height={qrTargetSize}
           />
         )}
       </View>
@@ -97,5 +113,7 @@ CodeScanner.defaultProps = {
   showQrTarget: true,
   codeTypes: [BarcodeFormat.QR_CODE],
   closeOnScan: false,
+  qrTargetColor: 'rgba(0,0,0,0.6)',
+  qrTargetSize: widthPercentageToDP(65),
 };
 export default CodeScanner;
