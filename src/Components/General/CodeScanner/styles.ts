@@ -33,4 +33,8 @@ export default StyleSheet.create({
     position: 'absolute',
     top: widthPercentageToDP(50),
   },
+  closeIcon: {
+    fontSize: 20,
+    color: 'white',
+  },
 });
