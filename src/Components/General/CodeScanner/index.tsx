@@ -10,12 +10,10 @@ import styles from './styles';
 // @ts-ignore
 import { Barcode, useScanBarcodes } from 'vision-camera-code-scanner';
 // @ts-ignore
-
 import { BarcodeFormat } from 'vision-camera-code-scanner';
-
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import { widthPercentageToDP } from 'react-native-responsive-screen';
 import QrTarget from '../QrTarget';
+import CloseIcon from '../../../Assets/CloseIcon';
 
 interface Props {
   onScan: (data: Barcode) => void;
@@ -91,10 +89,7 @@ const CodeScanner = ({
           style={[styles.closeButton, closeButtonStyles]}
           onPress={onClose}
         >
-          <FontAwesome
-            name="close"
-            style={[styles.closeIcon, closeIconStyles]}
-          />
+          <CloseIcon style={[styles.closeIcon, closeIconStyles]} />
         </TouchableOpacity>
         {showQrTarget && (
           <QrTarget
