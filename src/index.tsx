@@ -8,7 +8,7 @@ import Textarea from './Components/General/Input/Textarea';
 import Button from './Components/General/Button';
 import PopupRoot from './Components/General/PopupUI/Root';
 import Popup from './Components/General/PopupUI/Popup';
-import CodeScanner from './Components/General/CodeScanner';
+import { CodeScanner, CodeScannerView } from './Components/General/CodeScanner';
 
 export {
   InformationBox,
@@ -22,4 +22,5 @@ export {
   Popup,
   Textarea,
   CodeScanner,
+  CodeScannerView,
 };
