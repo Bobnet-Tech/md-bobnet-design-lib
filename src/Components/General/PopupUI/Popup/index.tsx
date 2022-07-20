@@ -246,10 +246,10 @@ const styles = StyleSheet.create({
     color: Colors.secondary,
   },
   TextDanger: {
-    color: Colors.error,
+    color: Colors.warning,
   },
   TextWarning: {
-    color: Colors.warning,
+    color: Colors.primary,
   },
   TextSadFace: {
     color: Colors.error,
@@ -264,10 +264,10 @@ const styles = StyleSheet.create({
     borderColor: Colors.secondary,
   },
   Danger: {
-    borderColor: Colors.error,
+    borderColor: Colors.warning,
   },
   Warning: {
-    borderColor: Colors.warning,
+    borderColor: Colors.primary,
   },
   SadFace: {
     borderColor: Colors.warning,
