@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react-native';
 import React, { useState } from 'react';
 import { Text, View } from 'react-native';
 import { CodeScanner, Button, CodeScannerView } from 'react-native-bob-design';
+import { heightPercentageToDP } from 'react-native-responsive-screen';
 import { BarcodeFormat } from 'vision-camera-code-scanner';
 
 storiesOf('CodeScanner', module)
@@ -65,6 +66,7 @@ storiesOf('CodeScanner', module)
             onScan={onScan}
             closeOnScan
             codeTypes={[BarcodeFormat.ALL_FORMATS]}
+            containerStyles={{ height: 330 }}
           />
         </View>
       );

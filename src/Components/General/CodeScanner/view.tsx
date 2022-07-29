@@ -26,7 +26,7 @@ interface Props {
   qrTargetStyles?: any;
   closeButtonStyles?: any;
   codeTypes?: BarcodeFormat[];
-  containerStyles?: any[];
+  containerStyles: any;
 }
 const CodeScannerView = ({
   onScan,
@@ -36,6 +36,7 @@ const CodeScannerView = ({
   qrTargetSize,
   qrTargetStyles,
   showQrTarget,
+  containerStyles,
 }: Props) => {
   const [hasPermission, setHasPermission] = React.useState(false);
   const devices = useCameraDevices();
@@ -62,11 +63,14 @@ const CodeScannerView = ({
   if (!isReady) {
     return null;
   }
-
   return (
     <View style={styles.modalContent}>
       <Camera
-        style={StyleSheet.absoluteFill}
+        style={
+          Object.keys(containerStyles).length > 0
+            ? containerStyles
+            : StyleSheet.absoluteFill
+        }
         device={device}
         isActive={isReady}
         frameProcessor={frameProcessor}
@@ -89,6 +93,5 @@ CodeScannerView.defaultProps = {
   codeTypes: [BarcodeFormat.QR_CODE],
   qrTargetColor: 'rgba(0,0,0,0.6)',
   qrTargetSize: widthPercentageToDP(65),
-  containerStyles: {},
 };
 export default CodeScannerView;
