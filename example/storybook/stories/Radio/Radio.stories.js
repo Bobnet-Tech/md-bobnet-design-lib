@@ -25,6 +25,7 @@ storiesOf('Radios', module)
             disabled={false}
             label={'Custom Fill Color Unchecked'}
             fillColor={'red'}
+            labelStyles={{ color: 'red' }}
             checked={false}
           />
           <CustomRadio

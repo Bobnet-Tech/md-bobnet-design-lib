@@ -15,6 +15,7 @@ interface Props {
   onToggle: any;
   label: string;
   fillColor: string;
+  labelStyles: StyleProp<ViewStyle>;
   containerStyles?: StyleProp<ViewStyle>;
 }
 const CustomRadio = ({
@@ -22,6 +23,7 @@ const CustomRadio = ({
   disabled,
   onToggle,
   fillColor,
+  labelStyles,
   label,
   containerStyles,
 }: Props) => {
@@ -37,7 +39,13 @@ const CustomRadio = ({
           size={23}
           color={disabled ? Colors.disabled : fillColor}
         />
-        <Text style={[styles.defaultText, disabled ? styles.disabledText : {}]}>
+        <Text
+          style={[
+            styles.defaultText,
+            disabled ? styles.disabledText : {},
+            labelStyles,
+          ]}
+        >
           {label}
         </Text>
       </TouchableOpacity>
