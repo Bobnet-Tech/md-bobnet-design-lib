@@ -18,6 +18,7 @@ interface Props {
   customShowPassword: any;
   customHidePassword: any;
   errorCheck: boolean;
+  passwordIcon: any;
 }
 
 const PasswordInput = (props: Props & TextInputProps) => {
@@ -34,7 +35,13 @@ const PasswordInput = (props: Props & TextInputProps) => {
           labelStyles={labelStyles}
           containerStyles={styles.container}
           isPassword
-          leftComponent={<PasswordIcon style={{ marginRight: 5 }} />}
+          leftComponent={
+            <PasswordIcon
+              style={
+                props.passwordIcon ? props.passwordIcon : { marginRight: 5 }
+              }
+            />
+          }
           customShowPasswordComponent={
             <View
               style={{

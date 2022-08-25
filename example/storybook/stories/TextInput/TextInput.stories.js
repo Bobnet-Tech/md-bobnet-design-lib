@@ -18,22 +18,22 @@ storiesOf('Inputs', module)
   .add('PhoneInput', () =>
     React.createElement(() => {
       const [phone, setPhone] = useState();
+      const [phone2, setPhone2] = useState();
       return (
         <View>
           <PhoneInput
-            staticLabel={false}
+            staticLabel={true}
             onChangeText={setPhone}
             label={text('Phone Label 1', 'Phone Number')}
-            style={{ marginBottom: 5 }}
             value={phone}
+            phoneIcon={{ marginLeft: 15 }}
           />
           <PhoneInput
             staticLabel={false}
-            onChangeText={setPhone}
+            onChangeText={setPhone2}
             label={text('Phone Label 2', 'Phone Number')}
             error={text('Error', 'This field is required')}
-            style={{ marginBottom: 5 }}
-            value={phone}
+            value={phone2}
           />
         </View>
       );
@@ -80,7 +80,7 @@ storiesOf('Inputs', module)
             label={'Description'}
           />
           <Textarea
-            staticLabel={true}
+            staticLabel={false}
             value={description}
             onChangeText={setDescription}
             error={'This field is required'}
@@ -97,17 +97,9 @@ storiesOf('Inputs', module)
       return (
         <View>
           <PasswordInput
-            error={false}
-            value={description}
-            style={{ marginBottom: 5 }}
-            onChangeText={setDescription}
-            label={'Description'}
-          />
-          <PasswordInput
             value={description}
             onChangeText={setDescription}
             error={'This field is required'}
-            style={{ marginBottom: 5 }}
             label={'Description'}
           />
         </View>

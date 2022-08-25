@@ -15,6 +15,7 @@ interface Props {
   error?: string | undefined | null;
   textComponent?: any;
   errorCheck: boolean;
+  phoneIcon: any;
 }
 
 const countries = [
@@ -52,7 +53,9 @@ const PhoneNumberInput = (props: Props & TextInputProps) => {
                   styles.customFlag
                 }
               >
-                <PhoneIcon style={{ marginLeft: 10 }} />
+                <PhoneIcon
+                  style={props.phoneIcon ? props.phoneIcon : { marginLeft: 10 }}
+                />
                 {isFocused && <Text style={styles.customFlagText}>+40</Text>}
               </View>
             );
