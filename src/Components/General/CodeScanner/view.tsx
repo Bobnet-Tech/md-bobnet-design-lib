@@ -27,6 +27,7 @@ interface Props {
   closeButtonStyles?: any;
   codeTypes?: BarcodeFormat[];
   containerStyles: any;
+  isActive: boolean;
 }
 const CodeScannerView = ({
   onScan,
@@ -37,6 +38,7 @@ const CodeScannerView = ({
   qrTargetStyles,
   showQrTarget,
   containerStyles,
+  isActive,
 }: Props) => {
   const [hasPermission, setHasPermission] = React.useState(false);
   const devices = useCameraDevices();
@@ -58,7 +60,7 @@ const CodeScannerView = ({
     })();
   }, []);
 
-  const isReady = device != null && hasPermission;
+  const isReady = device != null && hasPermission && isActive;
 
   if (!isReady) {
     return null;
