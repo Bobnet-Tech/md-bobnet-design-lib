@@ -43,7 +43,9 @@ const CodeScannerView = ({
   const [hasPermission, setHasPermission] = React.useState(false);
   const devices = useCameraDevices();
   const device = devices.back;
-  const [frameProcessor, barcodes] = useScanBarcodes(codeTypes);
+  const [frameProcessor, barcodes] = useScanBarcodes(codeTypes, {
+    checkInverted: true,
+  });
 
   useEffect(() => {
     if (barcodes?.length) {
