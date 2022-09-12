@@ -49,7 +49,7 @@ storiesOf('Inputs', module)
             staticLabel={false}
             error={false}
             value={lastName}
-            style={{ marginBottom: 5 }}
+            labelStylesExternal={{ marginLeft: -10 }}
             onChangeText={setLastName}
             label={'Last Name'}
           />

@@ -18,12 +18,14 @@ interface Props {
   customShowPassword: any;
   customHidePassword: any;
   errorCheck: boolean;
+  labelStylesExternal: any;
   passwordIcon: any;
 }
 
 const PasswordInput = (props: Props & TextInputProps) => {
   let labelStyles = {
     ...styles.labelStyles,
+    ...props.labelStylesExternal,
     ...(props.staticLabel ? { paddingTop: 10 } : {}),
   };
   return (

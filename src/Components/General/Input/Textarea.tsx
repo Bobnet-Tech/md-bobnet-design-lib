@@ -12,12 +12,14 @@ interface Props {
   leftIconColor?: string;
   staticLabel?: boolean;
   error?: string | undefined | null;
+  labelStylesExternal: any;
   hint?: string;
 }
 
 const Textarea = (props: Props & TextInputProps) => {
   let labelStyles = {
     ...styles.labelStyles,
+    ...props.labelStylesExternal,
     ...(props.staticLabel ? { paddingTop: 10 } : {}),
   };
   return (

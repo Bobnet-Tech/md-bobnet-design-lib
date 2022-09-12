@@ -14,12 +14,14 @@ interface Props {
   error?: string | undefined | null;
   hint?: string;
   customLeftComponent: any;
+  labelStylesExternal: any;
   errorCheck: boolean;
 }
 
 const Input = (props: Props & TextInputProps) => {
   let labelStyles = {
     ...styles.labelStyles,
+    ...props.labelStylesExternal,
     ...(props.staticLabel ? { paddingTop: 10 } : {}),
   };
   return (
