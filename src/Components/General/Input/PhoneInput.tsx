@@ -31,6 +31,7 @@ const countries = [
 const PhoneNumberInput = (props: Props & TextInputProps) => {
   let labelStyles = {
     ...styles.labelStyles,
+    ...props.labelStylesExternal,
     ...(props.staticLabel ? { paddingTop: 10 } : {}),
   };
   const [isFocused, setIsFocused] = useState(false);
