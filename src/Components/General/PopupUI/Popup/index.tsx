@@ -11,6 +11,7 @@ import {
   Alert,
 } from 'react-native';
 import { Colors, FontFamily } from '../../../../Theme';
+import Loading from '../../Button/Loading';
 const WIDTH = Dimensions.get('screen').width;
 const HEIGHT = Dimensions.get('screen').height;
 
@@ -49,6 +50,8 @@ class Popup extends Component<any, any> {
           : this.defaultCallback(),
       secondCallback:
         config.secondCallback !== undefined && config.secondCallback,
+      isLoading: config.isLoading || false,
+      secondIsLoading: config.secondIsLoading || false,
       background: config.background || 'rgba(0, 0, 0, 0.5)',
       timing: config.timing,
       autoClose: config.autoClose !== undefined ? config.autoClose : false,
@@ -137,19 +140,25 @@ class Popup extends Component<any, any> {
       callback,
       secondCallback,
       background,
+      isLoading,
+      secondIsLoading,
     }: any = this.state;
     let el = null;
     let secondEl = null;
-
+    console.log(isLoading);
     if (this.state.button) {
       el = (
         <TouchableOpacity
           style={[styles.Button, styles[type]]}
-          onPress={callback}
+          onPress={!isLoading ? callback : null}
         >
-          <Text style={[styles.TextButton, styles['Text' + type]]}>
-            {buttonText}
-          </Text>
+          {isLoading ? (
+            <Loading outlined={true} />
+          ) : (
+            <Text style={[styles.TextButton, styles['Text' + type]]}>
+              {buttonText}
+            </Text>
+          )}
         </TouchableOpacity>
       );
     } else {
@@ -159,11 +168,15 @@ class Popup extends Component<any, any> {
       secondEl = (
         <TouchableOpacity
           style={[styles.secondButton, styles[type]]}
-          onPress={secondCallback}
+          onPress={!isLoading ? secondCallback : null}
         >
-          <Text style={[styles.secondTextButton, styles['Text' + type]]}>
-            {secondButtonText}
-          </Text>
+          {secondIsLoading ? (
+            <Loading outlined={false} />
+          ) : (
+            <Text style={[styles.secondTextButton, styles['Text' + type]]}>
+              {secondButtonText}
+            </Text>
+          )}
         </TouchableOpacity>
       );
     } else {

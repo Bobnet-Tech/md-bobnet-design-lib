@@ -113,6 +113,7 @@ storiesOf('Popups', module)
           textBody: 'Sigur vrei sa stergi adresa?',
           buttonText: 'Da',
           secondButtonText: 'Renunta',
+          isLoading: false,
           callback: () => Popup.hide(),
           secondCallback: () => Popup.hide(),
         });
@@ -123,7 +124,7 @@ storiesOf('Popups', module)
           <View style={{ flex: 1, justifyContent: 'center' }}>
             <Button
               type="primary"
-              text="DeleteAccount"
+              text="DeleteAddrr"
               style={{ margin: 10 }}
               onPress={() => showPopup('DeleteAddress')}
             />
