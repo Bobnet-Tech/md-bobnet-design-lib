@@ -39,11 +39,16 @@ class Popup extends Component<any, any> {
       icon: config.icon !== undefined ? config.icon : false,
       textBody: config.textBody,
       button: config.button !== undefined ? config.button : true,
+      secondButton:
+        config.secondButton !== undefined ? config.secondButton : true,
       buttonText: config.buttonText || 'Ok',
+      secondButtonText: config.secondButtonText || 'Renunta',
       callback:
         config.callback !== undefined
           ? config.callback
           : this.defaultCallback(),
+      secondCallback:
+        config.secondCallback !== undefined && config.secondCallback,
       background: config.background || 'rgba(0, 0, 0, 0.5)',
       timing: config.timing,
       autoClose: config.autoClose !== undefined ? config.autoClose : false,
@@ -115,13 +120,27 @@ class Popup extends Component<any, any> {
         return require('../../../../Assets/Error.png');
       case 'Warning':
         return require('../../../../Assets/Warning.png');
+      case 'DeactivateAccount':
+        return require('../../../../Assets/deactivate.png');
+      case 'DeleteAddress':
+        return require('../../../../Assets/deleteAddrr.png');
     }
   }
 
   render() {
-    const { title, type, textBody, buttonText, callback, background }: any =
-      this.state;
+    const {
+      title,
+      type,
+      textBody,
+      buttonText,
+      secondButtonText,
+      callback,
+      secondCallback,
+      background,
+    }: any = this.state;
     let el = null;
+    let secondEl = null;
+
     if (this.state.button) {
       el = (
         <TouchableOpacity
@@ -136,6 +155,21 @@ class Popup extends Component<any, any> {
     } else {
       el = <Text />;
     }
+    if (this.state?.secondButton) {
+      secondEl = (
+        <TouchableOpacity
+          style={[styles.secondButton, styles[type]]}
+          onPress={secondCallback}
+        >
+          <Text style={[styles.secondTextButton, styles['Text' + type]]}>
+            {secondButtonText}
+          </Text>
+        </TouchableOpacity>
+      );
+    } else {
+      secondEl = <Text />;
+    }
+
     return (
       <Animated.View
         ref={(c) => (this._root = c)}
@@ -170,9 +204,10 @@ class Popup extends Component<any, any> {
             />
           )}
           <View style={styles.Content}>
-            <Text style={styles.Title}>{title}</Text>
-            <Text style={styles.Desc}>{textBody}</Text>
+            {title !== '' && <Text style={styles.Title}>{title}</Text>}
+            {textBody !== '' && <Text style={styles.Desc}>{textBody}</Text>}
             {el}
+            {secondEl}
           </View>
         </Animated.View>
       </Animated.View>
@@ -192,8 +227,8 @@ const styles = StyleSheet.create({
     left: 0,
   },
   Message: {
-    maxWidth: 300,
-    width: 230,
+    maxWidth: 350,
+    width: 290,
     minHeight: 300,
     backgroundColor: '#fff',
     borderRadius: 30,
@@ -203,13 +238,15 @@ const styles = StyleSheet.create({
   },
   Content: {
     padding: 20,
+    paddingBottom: 30,
+
     alignItems: 'center',
   },
   Header: {
     height: 230,
-    width: 230,
+    width: 290,
     backgroundColor: '#FBFBFB',
-    borderRadius: 100,
+    borderRadius: 80,
     marginTop: -120,
   },
   Image: {
@@ -219,6 +256,7 @@ const styles = StyleSheet.create({
     top: 20,
   },
   Title: {
+    textAlign: 'center',
     fontFamily: FontFamily.bold,
     fontSize: 18,
     color: '#333',
@@ -236,11 +274,24 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderWidth: 1,
+    borderColor: '',
     marginTop: 30,
+  },
+  secondButton: {
+    height: 20,
+    width: 130,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 20,
   },
   TextButton: {
     color: Colors.primary,
     fontFamily: FontFamily.bold,
+  },
+  secondTextButton: {
+    color: Colors.primary,
+    fontFamily: FontFamily.semiBold,
+    textDecorationLine: 'underline',
   },
   TextSuccess: {
     color: Colors.secondary,
