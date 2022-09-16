@@ -48,9 +48,7 @@ class Popup extends Component<any, any> {
           ? config.callback
           : this.defaultCallback(),
       secondCallback:
-        config.secondCallback !== undefined
-          ? config.secondCallback
-          : this.defaultCallback(),
+        config.secondCallback !== undefined && config.secondCallback,
       background: config.background || 'rgba(0, 0, 0, 0.5)',
       timing: config.timing,
       autoClose: config.autoClose !== undefined ? config.autoClose : false,

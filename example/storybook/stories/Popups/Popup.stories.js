@@ -14,6 +14,7 @@ storiesOf('Popups', module)
           type: type,
           title: 'Upload complete',
           button: true,
+          secondButton: false,
           textBody: 'Congrats! Your upload successfully done',
           buttonText: 'OK',
           callback: () => Popup.hide(),
