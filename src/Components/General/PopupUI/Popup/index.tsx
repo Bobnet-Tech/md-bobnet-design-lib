@@ -40,8 +40,7 @@ class Popup extends Component<any, any> {
       icon: config.icon !== undefined ? config.icon : false,
       textBody: config.textBody,
       button: config.button !== undefined ? config.button : true,
-      secondButton:
-        config.secondButton !== undefined ? config.secondButton : true,
+      secondButton: config.secondButton ? config.secondButton : false,
       buttonText: config.buttonText || 'Ok',
       secondButtonText: config.secondButtonText || 'Renunta',
       callback:
@@ -145,7 +144,6 @@ class Popup extends Component<any, any> {
     }: any = this.state;
     let el = null;
     let secondEl = null;
-    console.log(isLoading);
     if (this.state.button) {
       el = (
         <TouchableOpacity
