@@ -6,6 +6,7 @@ import {
   ViewStyle,
   Text,
   TextStyle,
+  TouchableOpacityProps,
 } from 'react-native';
 import Loading from './Loading';
 import styles from './styles';
@@ -31,7 +32,8 @@ const Button = ({
   textStyle = {},
   outlined = false,
   testID,
-}: Props) => {
+  ...rest
+}: Props & TouchableOpacityProps) => {
   let currentStyles = useMemo(() => {
     let buttonKey = '';
     let textKey = '';
@@ -57,6 +59,7 @@ const Button = ({
       onPress={onPress}
       activeOpacity={0.7}
       disabled={disabled || isLoading}
+      {...rest}
     >
       <View style={[styles.button, currentStyles.button, style]}>
         {isLoading && <Loading outlined={outlined} />}
