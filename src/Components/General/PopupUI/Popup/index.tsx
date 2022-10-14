@@ -147,6 +147,7 @@ class Popup extends Component<any, any> {
     if (this.state.button) {
       el = (
         <TouchableOpacity
+          accessibilityLabel="primary-button-popup"
           style={[styles.Button, styles[type]]}
           onPress={!isLoading ? callback : null}
         >
@@ -165,6 +166,7 @@ class Popup extends Component<any, any> {
     if (this.state?.secondButton) {
       secondEl = (
         <TouchableOpacity
+          accessibilityLabel="secondary-button-popup"
           style={[styles.secondButton, styles[type]]}
           onPress={!isLoading ? secondCallback : null}
         >
