@@ -21,6 +21,7 @@ interface Props {
   style?: StyleProp<ViewStyle>;
   textStyle?: StyleProp<TextStyle>;
   testID?: any;
+  accessibilityLabel?: string;
 }
 const Button = ({
   onPress,
@@ -32,6 +33,7 @@ const Button = ({
   textStyle = {},
   outlined = false,
   testID,
+  accessibilityLabel,
   ...rest
 }: Props & TouchableOpacityProps) => {
   let currentStyles = useMemo(() => {
@@ -56,6 +58,7 @@ const Button = ({
   return (
     <TouchableOpacity
       testID={testID}
+      accessibilityLabel={accessibilityLabel}
       onPress={onPress}
       activeOpacity={0.7}
       disabled={disabled || isLoading}
