@@ -63,7 +63,7 @@ export default StyleSheet.create({
     backgroundColor: 'white',
     borderBottomWidth: StyleSheet.hairlineWidth,
     paddingVertical: 13.5,
-    marginVertical: 2,
+    marginVertical: 4,
     borderBottomColor: Colors.gray,
   },
   customFlagText: {
@@ -102,7 +102,6 @@ export default StyleSheet.create({
     flexDirection: 'row',
     backgroundColor: 'white',
     paddingVertical: 13.5,
-    marginVertical: 2,
     borderBottomColor: Colors.gray,
   },
 });

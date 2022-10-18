@@ -18,22 +18,15 @@ storiesOf('Inputs', module)
   .add('PhoneInput', () =>
     React.createElement(() => {
       const [phone, setPhone] = useState();
-      const [phone2, setPhone2] = useState();
       return (
         <View>
           <PhoneInput
-            staticLabel={true}
+            staticLabel={false}
             onChangeText={setPhone}
             label={text('Phone Label 1', 'Phone Numberrrr')}
             value={phone}
             phoneIcon={{ marginLeft: 15 }}
-          />
-          <PhoneInput
-            staticLabel={false}
-            onChangeText={setPhone2}
-            label={text('Phone Label 2', 'Phone Number')}
             error={text('Error', 'This field is required')}
-            value={phone2}
           />
         </View>
       );
