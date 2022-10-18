@@ -10,6 +10,6 @@ export default {
   secondary: '#94C200',
   price: '#C92828',
   success: '#94C200',
-  error: '#FF0F7C',
+  error: '#FF762B',
   warning: '#FF762B',
 };
