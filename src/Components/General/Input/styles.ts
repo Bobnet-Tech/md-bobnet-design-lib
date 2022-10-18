@@ -10,10 +10,9 @@ export default StyleSheet.create({
     paddingHorizontal: 11,
     backgroundColor: Colors.white,
     paddingTop: 12,
-    paddingBottom: 5,
+    paddingBottom: 7,
     alignContent: 'center',
     justifyContent: 'center',
-    marginVertical: 2,
   },
   labelStyles: {
     fontFamily: FontFamily.base,
@@ -45,7 +44,6 @@ export default StyleSheet.create({
     paddingBottom: 10,
     alignContent: 'center',
     justifyContent: 'center',
-    marginVertical: 2,
   },
   passedContainer: {
     flexDirection: 'row',
@@ -58,7 +56,6 @@ export default StyleSheet.create({
     paddingBottom: 10,
     alignContent: 'center',
     justifyContent: 'center',
-    marginVertical: 2,
   },
   textarea: { height: 150, textAlignVertical: 'top', color: 'black' },
   customFlag: {

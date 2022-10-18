@@ -17,6 +17,7 @@ interface Props {
   fillColor?: string;
   containerStyles?: StyleProp<ViewStyle>;
   labelStyles?: any;
+  accessibilityLabel: string;
 }
 const CustomCheckbox = ({
   checked,
@@ -26,6 +27,7 @@ const CustomCheckbox = ({
   label,
   fillColor,
   containerStyles,
+  accessibilityLabel,
 }: Props) => {
   return (
     <View style={containerStyles}>
@@ -33,6 +35,7 @@ const CustomCheckbox = ({
         disabled={disabled}
         style={[styles.button, disabled ? styles.disabled : {}]}
         onPress={onToggle}
+        accessibilityLabel={accessibilityLabel}
       >
         <Ionicons
           name={checked ? 'md-checkbox' : 'md-square-outline'}

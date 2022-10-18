@@ -17,6 +17,7 @@ interface Props {
   fillColor: string;
   labelStyles: StyleProp<ViewStyle>;
   containerStyles?: StyleProp<ViewStyle>;
+  accessibilityLabel: string;
 }
 const CustomRadio = ({
   checked,
@@ -26,6 +27,7 @@ const CustomRadio = ({
   labelStyles,
   label,
   containerStyles,
+  accessibilityLabel,
 }: Props) => {
   return (
     <View style={containerStyles}>
@@ -33,6 +35,7 @@ const CustomRadio = ({
         disabled={disabled}
         style={[styles.button]}
         onPress={onToggle}
+        accessibilityLabel={accessibilityLabel}
       >
         <Ionicons
           name={checked ? 'md-radio-button-on' : 'md-radio-button-off'}

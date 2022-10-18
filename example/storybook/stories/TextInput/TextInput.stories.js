@@ -24,7 +24,7 @@ storiesOf('Inputs', module)
           <PhoneInput
             staticLabel={true}
             onChangeText={setPhone}
-            label={text('Phone Label 1', 'Phone Number')}
+            label={text('Phone Label 1', 'Phone Numberrrr')}
             value={phone}
             phoneIcon={{ marginLeft: 15 }}
           />
