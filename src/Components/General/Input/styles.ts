@@ -84,7 +84,7 @@ export default StyleSheet.create({
   },
   phoneNumberBorderError: {
     position: 'absolute',
-    bottom: 2,
+    bottom: 0,
     width: '100%',
     borderColor: Colors.black,
     borderBottomWidth: StyleSheet.hairlineWidth,
@@ -92,7 +92,7 @@ export default StyleSheet.create({
   },
   phoneNumberBorderPassed: {
     position: 'absolute',
-    bottom: 2,
+    bottom: 0,
     width: '100%',
     borderColor: Colors.black,
     borderBottomWidth: 1,
