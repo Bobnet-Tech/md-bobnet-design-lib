@@ -46,6 +46,7 @@ const PasswordInput = (props: Props & TextInputProps) => {
           }
           customShowPasswordComponent={
             <View
+              accessibilityLabel="toggle-show-password"
               style={{
                 marginRight: props.errorCheck ? 30 : 0,
               }}
@@ -55,6 +56,7 @@ const PasswordInput = (props: Props & TextInputProps) => {
           }
           customHidePasswordComponent={
             <View
+              accessibilityLabel="toggle-hide-password"
               style={{
                 marginRight: props.errorCheck ? 30 : 0,
               }}

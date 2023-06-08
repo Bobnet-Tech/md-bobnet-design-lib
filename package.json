@@ -37,13 +37,13 @@
     "ios",
     "android"
   ],
-  "repository": "https://gitlab.com/multinode/md/react-native-bob-design",
+  "repository": "https://github.com/Bobnet-Tech/md-bobnet-design-lib",
   "author": "Claudiu Florea <claudiu.florea@bobnet.ro> (https://bob-concierge.ro)",
   "license": "MIT",
   "bugs": {
-    "url": "https://gitlab.com/multinode/md/react-native-bob-design/issues"
+    "url": "https://github.com/Bobnet-Tech/md-bobnet-design-lib/issues"
   },
-  "homepage": "https://gitlab.com/multinode/md/react-native-bob-design#readme",
+  "homepage": "https://github.com/Bobnet-Tech/md-bobnet-design-lib#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
@@ -109,7 +109,7 @@
     "npm": {
       "publish": false
     },
-    "gitlab": {
+    "github": {
       "release": true
     },
     "plugins": {
