@@ -18,6 +18,7 @@ storiesOf('Inputs', module)
   .add('PhoneInput', () =>
     React.createElement(() => {
       const [phone, setPhone] = useState();
+      const [dialCode, setDialCode] = useState('+40');
       return (
         <View>
           <PhoneInput
@@ -25,6 +26,8 @@ storiesOf('Inputs', module)
             onChangeText={setPhone}
             label={text('Phone Label 1', 'Phone Numberrrr')}
             value={phone}
+            dialCode={dialCode}
+            onSelectCountry={(country) => setDialCode(country === 'ro' ? '+40' : '+373')}
             phoneIcon={{ marginLeft: 15 }}
             error={text('Error', 'This field is required')}
           />

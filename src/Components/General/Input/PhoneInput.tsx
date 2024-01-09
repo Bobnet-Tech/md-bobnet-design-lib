@@ -18,20 +18,22 @@ interface Props {
   errorCheck: boolean;
   labelStylesExternal: any;
   phoneIcon: any;
+  onSelectCountry: any;
+  dialCode: string;
 }
 
 const countries = [
   {
     name: 'Romania (România)',
     iso2: 'ro',
-    dialCode: '40',
+    dialCode: '+40',
     priority: 0,
     areaCodes: null,
   },
   {
     name: 'Republica Moldova',
-    iso2: 'mo',
-    dialCode: '373',
+    iso2: 'md',
+    dialCode: '+373',
     priority: 1,
     areaCodes: null,
   },
@@ -44,7 +46,6 @@ const PhoneNumberInput = (props: Props & TextInputProps) => {
     ...(props.staticLabel ? { paddingTop: 10 } : {}),
   };
   const [isFocused, setIsFocused] = useState(false);
-  const [dialCode, setDialCode] = useState('40')
 
   const onInputFocus = () => {
     setIsFocused(true);
@@ -66,15 +67,14 @@ const PhoneNumberInput = (props: Props & TextInputProps) => {
                   styles.customFlag
                 }
               >
-                <View style={styles.dialCode}>
                 <PhoneIcon
                   style={props.phoneIcon ? props.phoneIcon : { marginLeft: 10 }}
                 />
-                {isFocused && <>
-                  <Text style={styles.customFlagText}>+{dialCode}</Text>
-                  <PhoneArrowIcon width={10} height={10} style={{marginLeft: 5}} /></>
-                }</View>
-
+                {isFocused && <View style={styles.dialCode}>
+                  <Text style={styles.customFlagText}>{props.dialCode}</Text>
+                  <PhoneArrowIcon width={10} height={10} style={{marginLeft: 5}} />
+                  </View>
+                }
               </View>
             );
           }}
@@ -84,7 +84,7 @@ const PhoneNumberInput = (props: Props & TextInputProps) => {
           offset={-1}
           countriesList={countries}
           flagStyle={styles.flag}
-          onSelectCountry={(country) => setDialCode(countries.find((c) => c.iso2 === country).dialCode)}
+          onSelectCountry={(country) => props.onSelectCountry(country)}
           textProps={{
             label: props.label,
             staticLabel: props.staticLabel,
