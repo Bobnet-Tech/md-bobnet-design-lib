@@ -62,9 +62,14 @@ export default StyleSheet.create({
     flexDirection: 'row',
     backgroundColor: 'white',
     borderBottomWidth: StyleSheet.hairlineWidth,
-    paddingVertical: 13.5,
+    paddingVertical: 10.5,
     marginVertical: 4,
     borderBottomColor: Colors.gray,
+  },
+  dialCode: {
+    marginTop:5,
+    flexDirection: 'row',
+    alignItems:'center'
   },
   customFlagText: {
     fontFamily: FontFamily.base,

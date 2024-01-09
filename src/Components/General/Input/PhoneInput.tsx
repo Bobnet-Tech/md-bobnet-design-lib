@@ -6,6 +6,7 @@ import styles from './styles';
 import PassedIcon from '../../../Assets/PassedIcon';
 import ErrorIcon from '../../../Assets/ErrorIcon';
 import PhoneIcon from '../../../Assets/PhoneIcon';
+import PhoneArrowIcon from '../../../Assets/PhoneArrow';
 
 interface Props {
   label?: any;
@@ -27,6 +28,13 @@ const countries = [
     priority: 0,
     areaCodes: null,
   },
+  {
+    name: 'Republica Moldova',
+    iso2: 'mo',
+    dialCode: '373',
+    priority: 1,
+    areaCodes: null,
+  },
 ];
 
 const PhoneNumberInput = (props: Props & TextInputProps) => {
@@ -36,9 +44,12 @@ const PhoneNumberInput = (props: Props & TextInputProps) => {
     ...(props.staticLabel ? { paddingTop: 10 } : {}),
   };
   const [isFocused, setIsFocused] = useState(false);
+  const [dialCode, setDialCode] = useState('40')
+
   const onInputFocus = () => {
     setIsFocused(true);
   };
+
   return (
     <>
       <View style={props.style}>
@@ -55,10 +66,15 @@ const PhoneNumberInput = (props: Props & TextInputProps) => {
                   styles.customFlag
                 }
               >
+                <View style={styles.dialCode}>
                 <PhoneIcon
                   style={props.phoneIcon ? props.phoneIcon : { marginLeft: 10 }}
                 />
-                {isFocused && <Text style={styles.customFlagText}>+40</Text>}
+                {isFocused && <>
+                  <Text style={styles.customFlagText}>+{dialCode}</Text>
+                  <PhoneArrowIcon width={10} height={10} style={{marginLeft: 5}} /></>
+                }</View>
+
               </View>
             );
           }}
@@ -68,6 +84,7 @@ const PhoneNumberInput = (props: Props & TextInputProps) => {
           offset={-1}
           countriesList={countries}
           flagStyle={styles.flag}
+          onSelectCountry={(country) => setDialCode(countries.find((c) => c.iso2 === country).dialCode)}
           textProps={{
             label: props.label,
             staticLabel: props.staticLabel,
