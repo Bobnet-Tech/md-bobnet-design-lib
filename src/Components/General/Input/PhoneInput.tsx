@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Text, TextInputProps, View } from 'react-native';
 import PhoneInput from 'react-native-phone-input';
-import { FloatingLabelInput } from 'react-native-floating-label-input';
+// import { FloatingLabelInput } from 'react-native-floating-label-input';
 import styles from './styles';
 import PassedIcon from '../../../Assets/PassedIcon';
 import ErrorIcon from '../../../Assets/ErrorIcon';
@@ -78,7 +78,7 @@ const PhoneNumberInput = (props: Props & TextInputProps) => {
               </View>
             );
           }}
-          textComponent={FloatingLabelInput}
+          // textComponent={''}
           allowZeroAfterCountryCode={true}
           autoFormat={true}
           offset={-1}

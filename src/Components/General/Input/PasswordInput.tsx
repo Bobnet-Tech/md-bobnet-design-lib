@@ -1,10 +1,9 @@
 import React from 'react';
 import { Text, TextInputProps, View } from 'react-native';
-import { FloatingLabelInput } from 'react-native-floating-label-input';
 import styles from './styles';
 import ShowPass from '../../../Assets/ShowPass';
 import HidePass from '../../../Assets/HidePass';
-import PasswordIcon from '../../../Assets/PasswordIcon';
+// import PasswordIcon from '../../../Assets/PasswordIcon';
 import PassedIcon from '../../../Assets/PassedIcon';
 import ErrorIcon from '../../../Assets/ErrorIcon';
 
@@ -23,15 +22,15 @@ interface Props {
 }
 
 const PasswordInput = (props: Props & TextInputProps) => {
-  let labelStyles = {
-    ...styles.labelStyles,
-    ...props.labelStylesExternal,
-    ...(props.staticLabel ? { paddingTop: 10 } : {}),
-  };
+  // let labelStyles = {
+  //   ...styles.labelStyles,
+  //   ...props.labelStylesExternal,
+  //   ...(props.staticLabel ? { paddingTop: 10 } : {}),
+  // };
   return (
     <>
       <View style={props.style}>
-        <FloatingLabelInput
+        {/* <FloatingLabelInput
           staticLabel={props.staticLabel}
           label={props.label}
           labelStyles={labelStyles}
@@ -65,7 +64,7 @@ const PasswordInput = (props: Props & TextInputProps) => {
             </View>
           }
           {...props}
-        />
+        /> */}
         {props.errorCheck &&
           (props.error ? (
             <>

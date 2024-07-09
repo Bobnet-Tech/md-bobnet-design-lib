@@ -24,7 +24,7 @@ storiesOf('Inputs', module)
           <PhoneInput
             staticLabel={false}
             onChangeText={setPhone}
-            label={text('Phone Label 1', 'Phone Numberrrr')}
+            label={text('Phone Label 1', 'Phone Number')}
             value={phone}
             dialCode={dialCode}
             onSelectCountry={(country) => setDialCode(country === 'ro' ? '+40' : '+373')}

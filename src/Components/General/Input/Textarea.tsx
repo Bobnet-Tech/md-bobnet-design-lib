@@ -2,8 +2,8 @@
 import React from 'react';
 import { Text, TextInputProps, View } from 'react-native';
 
-import { FloatingLabelInput } from 'react-native-floating-label-input';
-import Icon from 'react-native-vector-icons/FontAwesome';
+// import { FloatingLabelInput } from 'react-native-floating-label-input';
+// import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from './styles';
 
 interface Props {
@@ -17,14 +17,14 @@ interface Props {
 }
 
 const Textarea = (props: Props & TextInputProps) => {
-  let labelStyles = {
-    ...styles.labelStyles,
-    ...props.labelStylesExternal,
-    ...(props.staticLabel ? { paddingTop: 10 } : {}),
-  };
+  // let labelStyles = {
+  //   ...styles.labelStyles,
+  //   ...props.labelStylesExternal,
+  //   ...(props.staticLabel ? { paddingTop: 10 } : {}),
+  // };
   return (
     <View style={props.style}>
-      <FloatingLabelInput
+      {/* <FloatingLabelInput
         inputStyles={styles.textarea}
         staticLabel={props.staticLabel}
         multiline
@@ -45,7 +45,7 @@ const Textarea = (props: Props & TextInputProps) => {
           )
         }
         {...props}
-      />
+      /> */}
       {props.error && <Text style={styles.error}>{props.error}</Text>}
     </View>
   );
