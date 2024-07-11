@@ -3,9 +3,10 @@ import { Text, TextInputProps, View } from 'react-native';
 import styles from './styles';
 import ShowPass from '../../../Assets/ShowPass';
 import HidePass from '../../../Assets/HidePass';
-// import PasswordIcon from '../../../Assets/PasswordIcon';
+import PasswordIcon from '../../../Assets/PasswordIcon';
 import PassedIcon from '../../../Assets/PassedIcon';
 import ErrorIcon from '../../../Assets/ErrorIcon';
+import { TextInput } from 'react-native-paper';
 
 interface Props {
   label?: any;
@@ -22,27 +23,22 @@ interface Props {
 }
 
 const PasswordInput = (props: Props & TextInputProps) => {
-  // let labelStyles = {
-  //   ...styles.labelStyles,
-  //   ...props.labelStylesExternal,
-  //   ...(props.staticLabel ? { paddingTop: 10 } : {}),
-  // };
   return (
     <>
       <View style={props.style}>
-        {/* <FloatingLabelInput
+        <TextInput
           staticLabel={props.staticLabel}
           label={props.label}
-          labelStyles={labelStyles}
-          containerStyles={styles.container}
-          isPassword
-          leftComponent={
-            <PasswordIcon
-              style={
-                props.passwordIcon ? props.passwordIcon : { marginRight: 5 }
-              }
-            />
+          outlineStyle={styles.container}
+          secureTextEntry={true}
+          left={
+            <TextInput.Icon
+            icon={() => {
+              return <PasswordIcon />
+            }}
+            style={props.passwordIcon ? props.passwordIcon : { marginRight: 15, marginTop: 10 }} />
           }
+          //@ts-ignore
           customShowPasswordComponent={
             <View
               accessibilityLabel="toggle-show-password"
@@ -64,7 +60,7 @@ const PasswordInput = (props: Props & TextInputProps) => {
             </View>
           }
           {...props}
-        /> */}
+        />
         {props.errorCheck &&
           (props.error ? (
             <>

@@ -1,18 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from 'react';
-import { StyleSheet, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, TouchableOpacity, Vibration, View } from 'react-native';
 // @ts-ignore
-import { useCameraDevice, useCameraDevices } from 'react-native-vision-camera';
+import { useCameraDevice, useCameraDevices, useCodeScanner } from 'react-native-vision-camera';
 // @ts-ignore
 import { Camera } from 'react-native-vision-camera';
 import Modal from 'react-native-modal';
 import styles from './styles';
-// @ts-ignore
-// import { Barcode, useScanBarcodes } from 'vision-camera-code-scanner';
-// // @ts-ignore
-
-// import { BarcodeFormat } from 'vision-camera-code-scanner';
-
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import { widthPercentageToDP } from 'react-native-responsive-screen';
 import QrTarget from '../QrTarget';
@@ -35,29 +29,32 @@ interface Props {
 const CodeScanner = ({
   visible,
   CustomInfo,
+  onScan,
+  codeTypes,
   onClose,
   closeButtonStyles,
   qrTargetColor,
   qrTargetSize,
   closeIconStyles,
+  closeOnScan,
   qrTargetStyles,
   showQrTarget,
 }: Props) => {
   const [hasPermission, setHasPermission] = React.useState(false);
   const device = useCameraDevice('back')
-  // const [frameProcessor, barcodes] = useScanBarcodes(codeTypes, {
-  //   checkInverted: true,
-  // });
 
-  // useEffect(() => {
-  //   if (barcodes?.length) {
-  //     Vibration.vibrate([0, 200, 0]);
-  //     onScan(barcodes[0]);
-  //     if (closeOnScan) {
-  //       onClose();
-  //     }
-  //   }
-  // }, [barcodes]);
+  const codeScanner = useCodeScanner({
+    codeTypes: codeTypes,
+    onCodeScanned: (codes) => {
+    if (codes?.length) {
+      Vibration.vibrate([0, 200, 0]);
+      onScan(codes[0]);
+      if (closeOnScan) {
+        onClose();
+      }
+    }
+    }
+  })
 
   useEffect(() => {
     (async () => {
@@ -68,7 +65,6 @@ const CodeScanner = ({
   }, []);
 
   const isReady = device != null && hasPermission && visible;
-
   if (!isReady) {
     return null;
   }
@@ -79,6 +75,7 @@ const CodeScanner = ({
         <Camera
           style={StyleSheet.absoluteFill}
           device={device}
+          codeScanner={codeScanner}
           isActive={isReady}
         />
         {!!CustomInfo && <CustomInfo />}

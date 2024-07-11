@@ -1,23 +1,17 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, Vibration, View } from 'react-native';
 // @ts-ignore
-import { useCameraDevice, useCameraDevices } from 'react-native-vision-camera';
+import { useCameraDevice, useCameraDevices, useCodeScanner } from 'react-native-vision-camera';
 // @ts-ignore
 import { Camera } from 'react-native-vision-camera';
 import styles from './styles';
-// @ts-ignore
-// import { Barcode, useScanBarcodes } from 'vision-camera-code-scanner';
-// // @ts-ignore
-
-// import { BarcodeFormat } from 'vision-camera-code-scanner';
 
 import { widthPercentageToDP } from 'react-native-responsive-screen';
 import QrTarget from '../QrTarget';
 
 interface Props {
   onScan: (data: any) => void;
-  scanFrequency?: number;
   CustomInfo?: any;
   showQrTarget?: boolean;
   qrTargetColor?: string;
@@ -30,6 +24,8 @@ interface Props {
   isActive: boolean;
 }
 const CodeScannerView = ({
+  onScan,
+  codeTypes,
   qrTargetColor,
   qrTargetSize,
   qrTargetStyles,
@@ -39,16 +35,16 @@ const CodeScannerView = ({
 }: Props) => {
   const [hasPermission, setHasPermission] = React.useState(false);
   const device = useCameraDevice('back')
-  // const [frameProcessor, barcodes] = useScanBarcodes(codeTypes, {
-  //   checkInverted: true,
-  // });
 
-  // useEffect(() => {
-  //   if (barcodes?.length) {
-  //     Vibration.vibrate([0, 200, 0]);
-  //     onScan(barcodes[0]);
-  //   }
-  // }, [barcodes]);
+  const codeScanner = useCodeScanner({
+    codeTypes: codeTypes,
+    onCodeScanned: (codes) => {
+    if (codes?.length) {
+      Vibration.vibrate([0, 200, 0]);
+      onScan(codes[0]);
+      }
+    }
+  })
 
   useEffect(() => {
     (async () => {
@@ -71,9 +67,9 @@ const CodeScannerView = ({
             ? containerStyles
             : StyleSheet.absoluteFill
         }
+        codeScanner={codeScanner}
         device={device}
         isActive={isReady}
-        // frameProcessor={frameProcessor}
       />
       {showQrTarget && (
         <QrTarget
@@ -87,7 +83,6 @@ const CodeScannerView = ({
   );
 };
 CodeScannerView.defaultProps = {
-  scanFrequency: 1,
   showQrTarget: true,
   codeTypes: [],
   qrTargetColor: 'rgba(0,0,0,0.6)',

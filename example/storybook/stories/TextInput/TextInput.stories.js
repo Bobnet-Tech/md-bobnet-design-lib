@@ -11,6 +11,8 @@ import {
 import { View } from 'react-native';
 import { withKnobs } from '@storybook/addon-ondevice-knobs';
 import { text } from '@storybook/addon-knobs';
+import EmailIcon from '../../../assets/Svgs/EmailIcon'
+
 
 storiesOf('Inputs', module)
   .addDecorator(withKnobs)
@@ -48,6 +50,9 @@ storiesOf('Inputs', module)
             labelStylesExternal={{ marginLeft: -10 }}
             onChangeText={setLastName}
             label={'Last Name'}
+            leftIcon={'email'}
+            customLeftComponent={<EmailIcon />}
+            style={{backgroundColor: 'white'}}
           />
           <Input
             staticLabel={false}

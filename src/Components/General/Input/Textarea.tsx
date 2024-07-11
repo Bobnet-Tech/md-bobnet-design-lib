@@ -1,10 +1,9 @@
 /* eslint-disable react/require-default-props */
 import React from 'react';
 import { Text, TextInputProps, View } from 'react-native';
-
-// import { FloatingLabelInput } from 'react-native-floating-label-input';
-// import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from './styles';
+import { TextInput } from 'react-native-paper';
 
 interface Props {
   label?: any;
@@ -17,35 +16,29 @@ interface Props {
 }
 
 const Textarea = (props: Props & TextInputProps) => {
-  // let labelStyles = {
-  //   ...styles.labelStyles,
-  //   ...props.labelStylesExternal,
-  //   ...(props.staticLabel ? { paddingTop: 10 } : {}),
-  // };
+  const hasError = !!props.error;
   return (
     <View style={props.style}>
-      {/* <FloatingLabelInput
-        inputStyles={styles.textarea}
+      <TextInput
+        //@ts-ignore
+        error={hasError}
         staticLabel={props.staticLabel}
         multiline
-        labelStyles={labelStyles}
-        containerStyles={styles.container}
         label={props.label}
-        animationDuration={300}
         autoCapitalize={props.autoCapitalize}
         hint={props.hint}
         autoCorrect={false}
-        leftComponent={
+        left={
           props.leftIcon && (
-            <Icon
-              name={props.leftIcon}
+            <TextInput.Icon
+              icon={props.leftIcon}
               style={styles.leftIcon}
               color={props.leftIconColor}
             />
           )
         }
         {...props}
-      /> */}
+      />
       {props.error && <Text style={styles.error}>{props.error}</Text>}
     </View>
   );

@@ -18,9 +18,16 @@ export default StyleSheet.create({
     fontFamily: FontFamily.base,
     color: '#000000',
   },
+  underlineColor: {
+    color: Colors.gray,
+  },
+  underlineBar: {
+    height: StyleSheet.hairlineWidth
+  },
   leftIcon: {
     fontSize: 18,
-    paddingRight: 5,
+    marginRight: 15,
+    marginTop: 10
   },
   flag: {
     width: 30,
