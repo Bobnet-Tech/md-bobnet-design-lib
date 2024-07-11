@@ -11,6 +11,8 @@ import {
 import { View } from 'react-native';
 import { withKnobs } from '@storybook/addon-ondevice-knobs';
 import { text } from '@storybook/addon-knobs';
+import EmailIcon from '../../../assets/Svgs/EmailIcon'
+
 
 storiesOf('Inputs', module)
   .addDecorator(withKnobs)
@@ -24,7 +26,7 @@ storiesOf('Inputs', module)
           <PhoneInput
             staticLabel={false}
             onChangeText={setPhone}
-            label={text('Phone Label 1', 'Phone Numberrrr')}
+            label={text('Phone Label 1', 'Phone Number')}
             value={phone}
             dialCode={dialCode}
             onSelectCountry={(country) => setDialCode(country === 'ro' ? '+40' : '+373')}
@@ -48,6 +50,9 @@ storiesOf('Inputs', module)
             labelStylesExternal={{ marginLeft: -10 }}
             onChangeText={setLastName}
             label={'Last Name'}
+            leftIcon={'email'}
+            customLeftComponent={<EmailIcon />}
+            style={{backgroundColor: 'white'}}
           />
           <Input
             staticLabel={false}

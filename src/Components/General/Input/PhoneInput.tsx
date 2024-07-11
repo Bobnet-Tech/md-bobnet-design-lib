@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { Text, TextInputProps, View } from 'react-native';
 import PhoneInput from 'react-native-phone-input';
-import { FloatingLabelInput } from 'react-native-floating-label-input';
 import styles from './styles';
 import PassedIcon from '../../../Assets/PassedIcon';
 import ErrorIcon from '../../../Assets/ErrorIcon';
 import PhoneIcon from '../../../Assets/PhoneIcon';
 import PhoneArrowIcon from '../../../Assets/PhoneArrow';
+import { TextInput } from 'react-native-paper';
 
 interface Props {
   label?: any;
@@ -40,11 +40,7 @@ const countries = [
 ];
 
 const PhoneNumberInput = (props: Props & TextInputProps) => {
-  let labelStyles = {
-    ...styles.labelStyles,
-    ...props.labelStylesExternal,
-    ...(props.staticLabel ? { paddingTop: 10 } : {}),
-  };
+  const hasError = !!props.error;
   const [isFocused, setIsFocused] = useState(false);
 
   const onInputFocus = () => {
@@ -78,7 +74,7 @@ const PhoneNumberInput = (props: Props & TextInputProps) => {
               </View>
             );
           }}
-          textComponent={FloatingLabelInput}
+          textComponent={TextInput}
           allowZeroAfterCountryCode={true}
           autoFormat={true}
           offset={-1}
@@ -86,15 +82,14 @@ const PhoneNumberInput = (props: Props & TextInputProps) => {
           flagStyle={styles.flag}
           onSelectCountry={(country) => props.onSelectCountry(country)}
           textProps={{
+            //@ts-ignore
+            error: hasError,
             label: props.label,
             staticLabel: props.staticLabel,
-            labelStyles: labelStyles,
             keyboardType: 'phone-pad',
             autoCapitalize: 'none',
             returnKeyType: 'next',
             maxLength: 10,
-            containerStyles: styles.container,
-            animationDuration: 300,
             onFocus: onInputFocus,
             ...props,
           }}

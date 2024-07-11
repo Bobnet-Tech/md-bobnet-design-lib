@@ -2,22 +2,16 @@
 import React, { useEffect } from 'react';
 import { StyleSheet, Vibration, View } from 'react-native';
 // @ts-ignore
-import { useCameraDevices } from 'react-native-vision-camera';
+import { useCameraDevice, useCameraDevices, useCodeScanner } from 'react-native-vision-camera';
 // @ts-ignore
 import { Camera } from 'react-native-vision-camera';
 import styles from './styles';
-// @ts-ignore
-import { Barcode, useScanBarcodes } from 'vision-camera-code-scanner';
-// @ts-ignore
-
-import { BarcodeFormat } from 'vision-camera-code-scanner';
 
 import { widthPercentageToDP } from 'react-native-responsive-screen';
 import QrTarget from '../QrTarget';
 
 interface Props {
-  onScan: (data: Barcode) => void;
-  scanFrequency?: number;
+  onScan: (data: any) => void;
   CustomInfo?: any;
   showQrTarget?: boolean;
   qrTargetColor?: string;
@@ -25,14 +19,13 @@ interface Props {
   closeIconStyles?: any;
   qrTargetStyles?: any;
   closeButtonStyles?: any;
-  codeTypes?: BarcodeFormat[];
+  codeTypes?: any[];
   containerStyles: any;
   isActive: boolean;
 }
 const CodeScannerView = ({
   onScan,
   codeTypes,
-  scanFrequency,
   qrTargetColor,
   qrTargetSize,
   qrTargetStyles,
@@ -41,24 +34,23 @@ const CodeScannerView = ({
   isActive,
 }: Props) => {
   const [hasPermission, setHasPermission] = React.useState(false);
-  const devices = useCameraDevices();
-  const device = devices.back;
-  const [frameProcessor, barcodes] = useScanBarcodes(codeTypes, {
-    checkInverted: true,
-  });
+  const device = useCameraDevice('back')
 
-  useEffect(() => {
-    if (barcodes?.length) {
+  const codeScanner = useCodeScanner({
+    codeTypes: codeTypes,
+    onCodeScanned: (codes) => {
+    if (codes?.length) {
       Vibration.vibrate([0, 200, 0]);
-      onScan(barcodes[0]);
+      onScan(codes[0]);
+      }
     }
-  }, [barcodes]);
+  })
 
   useEffect(() => {
     (async () => {
       const status = await Camera.requestCameraPermission();
 
-      setHasPermission(status === 'authorized');
+      setHasPermission(status === 'granted');
     })();
   }, []);
 
@@ -75,10 +67,9 @@ const CodeScannerView = ({
             ? containerStyles
             : StyleSheet.absoluteFill
         }
+        codeScanner={codeScanner}
         device={device}
         isActive={isReady}
-        frameProcessor={frameProcessor}
-        frameProcessorFps={scanFrequency}
       />
       {showQrTarget && (
         <QrTarget
@@ -92,9 +83,8 @@ const CodeScannerView = ({
   );
 };
 CodeScannerView.defaultProps = {
-  scanFrequency: 1,
   showQrTarget: true,
-  codeTypes: [BarcodeFormat.QR_CODE],
+  codeTypes: [],
   qrTargetColor: 'rgba(0,0,0,0.6)',
   qrTargetSize: widthPercentageToDP(65),
 };
