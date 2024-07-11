@@ -15,9 +15,6 @@ interface Props {
   hint?: string;
   customLeftComponent: any;
   labelStylesExternal: any;
-  outlineStyle?: any;
-  contentStyle?: any;
-  underlineStyle?: any;
   isEditable?: boolean; 
   errorCheck: boolean;
 }
