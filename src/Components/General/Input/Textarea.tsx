@@ -1,7 +1,6 @@
 /* eslint-disable react/require-default-props */
 import React from 'react';
 import { Text, TextInputProps, View } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from './styles';
 import { TextInput } from 'react-native-paper';
 
