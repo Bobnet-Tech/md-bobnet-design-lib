@@ -50,7 +50,7 @@ const PasswordInput = (props: Props & TextInputProps) => {
                 setSecureTextEntry(!secureTextEntry);
                 return false;
               }}
-              style={{marginRight: !props.errorCheck ? 70 : 0}}
+              style={{marginRight: 70}}
             />
           }
           //@ts-ignore
@@ -70,12 +70,10 @@ const PasswordInput = (props: Props & TextInputProps) => {
           (props.error ? (
             <>
               <ErrorIcon style={styles.rightIconPhone} />
-              <View style={styles.phoneNumberBorderError} />
             </>
           ) : (
             <>
               <PassedIcon style={styles.rightIconPhone} />
-              <View style={styles.phoneNumberBorderPassed} />
             </>
           ))}
       </View>
