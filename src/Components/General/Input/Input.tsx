@@ -59,8 +59,8 @@ const Input = (props: Props & TextInputProps) => {
           )
         }
         right={
-          !props.errorCheck &&
-          (!props.error ? (
+          props.errorCheck &&
+          (props.error ? (
             <TextInput.Icon icon={() => {
               return <ErrorIcon style={styles.rightIcon} />;
             }}/>
