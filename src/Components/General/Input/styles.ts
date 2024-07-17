@@ -89,8 +89,8 @@ export default StyleSheet.create({
   },
   rightIconPhone: {
     position: 'absolute',
-    right: 11,
-    top: 19,
+    right: 20,
+    top: 20,
     zIndex: 99999,
   },
   phoneNumberBorderError: {

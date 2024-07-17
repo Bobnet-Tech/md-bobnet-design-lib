@@ -101,7 +101,7 @@ storiesOf('Inputs', module)
             value={description}
             onChangeText={setDescription}
             error={'This field is required'}
-            label={'Description'}
+            label={'Password'}
           />
         </View>
       );
