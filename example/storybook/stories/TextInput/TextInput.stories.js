@@ -7,11 +7,14 @@ import {
   Input,
   Textarea,
   PasswordInput,
+  BobInput,
+  BobPhoneInput
 } from 'react-native-bob-design';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 import { withKnobs } from '@storybook/addon-ondevice-knobs';
 import { text } from '@storybook/addon-knobs';
 import EmailIcon from '../../../assets/Svgs/EmailIcon'
+import Icon from 'react-native-vector-icons/Feather'
 
 
 storiesOf('Inputs', module)
@@ -106,4 +109,41 @@ storiesOf('Inputs', module)
         </View>
       );
     })
-  );
+  )
+  .add('Bob Input', () =>
+  React.createElement(() => {
+    const [description, setDescription] = useState();
+    const [dialCode, setDialCode] = useState('+40');
+
+    return (
+      <View>
+        <View style={{marginBottom: 20}}>
+        <BobInput
+          value={description}
+          onChangeText={setDescription}
+          customLeftComponent={<Icon name={'user'} size={20} color={'#1F62AE'} />}
+          label={<Text style={{color: '#41556B', fontFamily: 'Nunito-Bold'}}>Full Name</Text>}
+        /></View>
+        <View style={{marginBottom: 20}}>
+        <BobInput
+          value={description}
+          onChangeText={setDescription}
+          placeholder={'john.doe@email.com'}
+          customLeftComponent={<Icon name={'mail'} style={{marginLeft: 0}} size={20} color={'#1F62AE'} />}
+          label={<Text style={{color: '#41556B', fontFamily: 'Nunito-Bold'}}>Email</Text>}
+        />
+        </View>
+         <View style={{marginBottom: 20}}>
+          <BobPhoneInput 
+            dialCode={dialCode}
+            value={description}
+            onChangeText={setDescription}
+            customLeftComponent={<Icon name={'phone'} size={20} color={'#1F62AE'} />}
+            label={<Text style={{fontFamily: "Nunito-Bold", color: '#41556B'}}>Phone Number</Text>}
+            onSelectCountry={(country) => setDialCode(country === 'md' ? '+373' : '+40')} />
+        </View>
+        <Text style={{color: '#41556B', fontFamily: 'Nunito-Bold'}}>Phone Number</Text>
+      </View>
+    );
+  })
+);

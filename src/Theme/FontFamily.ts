@@ -4,6 +4,7 @@ export const FontSize: any = {
   large: 40,
 };
 export default {
+  light: 'Nunito-Light',
   base: 'Nunito-Regular',
   bold: 'Nunito-Bold',
   semiBold: 'Nunito-SemiBold',

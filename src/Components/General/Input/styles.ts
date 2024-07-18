@@ -14,6 +14,22 @@ export default StyleSheet.create({
     alignContent: 'center',
     justifyContent: 'center',
   },
+  outlinedInput: {
+    flexDirection: 'row',
+    borderColor: Colors.lightGray,
+    backgroundColor: 'transparent',
+    alignContent: 'center',
+    justifyContent: 'center',
+    borderRadius: 12
+  },
+  bobInputContainer: {
+    borderWidth: 1,
+    borderRadius: 12,
+    borderTopEndRadius: 12,
+    borderTopLeftRadius: 12,
+    borderColor: Colors.lightGray,
+    backgroundColor: 'transparent',
+  },
   labelStyles: {
     fontFamily: FontFamily.base,
     color: '#000000',
@@ -22,7 +38,7 @@ export default StyleSheet.create({
     color: Colors.gray,
   },
   underlineBar: {
-    height: StyleSheet.hairlineWidth
+    height: 0
   },
   leftIcon: {
     fontSize: 18,
@@ -39,6 +55,19 @@ export default StyleSheet.create({
     fontSize: 12,
     fontFamily: FontFamily.base,
     color: Colors.error,
+    marginTop: 3
+  },
+  errorMessage: {
+    fontSize: 10,
+    fontFamily: FontFamily.base,
+    color: Colors.warn,
+    marginTop: 3
+  },
+  successMessage: {
+    fontSize: 10,
+    fontFamily: FontFamily.base,
+    color: Colors.green,
+    marginTop: 3
   },
   errorContainer: {
     flexDirection: 'row',
@@ -73,16 +102,26 @@ export default StyleSheet.create({
     marginVertical: 4,
     borderBottomColor: Colors.gray,
   },
+  customPhoneFlag: {
+    flexDirection: 'row',
+    marginRight: 8,
+    borderWidth: 1,
+    borderRadius: 12,
+    paddingHorizontal: 18,
+    height: 54,
+    alignItems: 'center',
+    borderColor: Colors.lightGray,
+  },
   dialCode: {
     flexDirection: 'row',
     alignItems:'center'
   },
   customFlagText: {
-    fontFamily: FontFamily.base,
+    fontFamily: FontFamily.bold,
     fontSize: 15,
-    paddingLeft: 10,
+    paddingHorizontal: 8,
     textAlign: 'center',
-    color: Colors.gray,
+    color: Colors.darkGrey,
   },
   rightIcon: {
     marginTop: 8,

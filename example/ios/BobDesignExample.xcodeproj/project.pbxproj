@@ -9,9 +9,17 @@
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* BobDesignExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* BobDesignExampleTests.m */; };
 		0C80B921A6F3F58F76C31292 /* libPods-BobDesignExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-BobDesignExample.a */; };
+		3C122547BD1F47D3BC5AA634 /* Nunito-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB6469148F074D2EB247825D /* Nunito-SemiBold.ttf */; };
+		559D9F6DDE5D4A5A8EC2BD01 /* Gilroy-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8FD96E95D420494F99FCEB58 /* Gilroy-Light.otf */; };
 		712A36BA2C3D55020082DB6B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 712A36B32C3D55020082DB6B /* AppDelegate.m */; };
 		712A36BE2C3D55020082DB6B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 712A36B72C3D55020082DB6B /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-BobDesignExample-BobDesignExampleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-BobDesignExample-BobDesignExampleTests.a */; };
+		84C576630F8D45209031A4C9 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9BDA7E50BB6741E3836FA82C /* Poppins-Regular.ttf */; };
+		A6F93F7ED03C42DFAFEC4779 /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8FCEB439E81847149790B4BD /* Nunito-Regular.ttf */; };
+		ADB0C851365C4760899C358A /* Gilroy-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 66644B8E07A14962A8DB2A6C /* Gilroy-ExtraBold.otf */; };
+		AF984DC691D942E69060E742 /* Calibri-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1E695093516C48B3AF723122 /* Calibri-Bold.ttf */; };
+		BF4671A339924971BEA518D0 /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10B251846FA54A2B86F01D5A /* Nunito-Bold.ttf */; };
+		D4189B1AE9284A3F815BF65A /* Calibri-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 25D84EC87703423E93D461D1 /* Calibri-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,13 +36,17 @@
 		00E356EE1AD99517003FC87E /* BobDesignExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BobDesignExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* BobDesignExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BobDesignExampleTests.m; sourceTree = "<group>"; };
+		10B251846FA54A2B86F01D5A /* Nunito-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-Bold.ttf"; path = "../assets/fonts/Nunito-Bold.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* BobDesignExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BobDesignExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-BobDesignExample-BobDesignExampleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BobDesignExample-BobDesignExampleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E695093516C48B3AF723122 /* Calibri-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Calibri-Bold.ttf"; path = "../assets/fonts/Calibri-Bold.ttf"; sourceTree = "<group>"; };
+		25D84EC87703423E93D461D1 /* Calibri-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Calibri-Regular.ttf"; path = "../assets/fonts/Calibri-Regular.ttf"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-BobDesignExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BobDesignExample.debug.xcconfig"; path = "Target Support Files/Pods-BobDesignExample/Pods-BobDesignExample.debug.xcconfig"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-BobDesignExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BobDesignExample.release.xcconfig"; path = "Target Support Files/Pods-BobDesignExample/Pods-BobDesignExample.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-BobDesignExample-BobDesignExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BobDesignExample-BobDesignExampleTests.debug.xcconfig"; path = "Target Support Files/Pods-BobDesignExample-BobDesignExampleTests/Pods-BobDesignExample-BobDesignExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-BobDesignExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BobDesignExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6132EF172BDFF13200BBE14D /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = BobDesignExample/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		66644B8E07A14962A8DB2A6C /* Gilroy-ExtraBold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Gilroy-ExtraBold.otf"; path = "../assets/fonts/Gilroy-ExtraBold.otf"; sourceTree = "<group>"; };
 		712A36B22C3D55020082DB6B /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		712A36B32C3D55020082DB6B /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		712A36B42C3D55020082DB6B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -43,6 +55,10 @@
 		712A36B72C3D55020082DB6B /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		712A36B82C3D55020082DB6B /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-BobDesignExample-BobDesignExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BobDesignExample-BobDesignExampleTests.release.xcconfig"; path = "Target Support Files/Pods-BobDesignExample-BobDesignExampleTests/Pods-BobDesignExample-BobDesignExampleTests.release.xcconfig"; sourceTree = "<group>"; };
+		8FCEB439E81847149790B4BD /* Nunito-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-Regular.ttf"; path = "../assets/fonts/Nunito-Regular.ttf"; sourceTree = "<group>"; };
+		8FD96E95D420494F99FCEB58 /* Gilroy-Light.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Gilroy-Light.otf"; path = "../assets/fonts/Gilroy-Light.otf"; sourceTree = "<group>"; };
+		9BDA7E50BB6741E3836FA82C /* Poppins-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Regular.ttf"; path = "../assets/fonts/Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		AB6469148F074D2EB247825D /* Nunito-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-SemiBold.ttf"; path = "../assets/fonts/Nunito-SemiBold.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -66,6 +82,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		002BD4781826426ABD321574 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				66644B8E07A14962A8DB2A6C /* Gilroy-ExtraBold.otf */,
+				8FD96E95D420494F99FCEB58 /* Gilroy-Light.otf */,
+				1E695093516C48B3AF723122 /* Calibri-Bold.ttf */,
+				25D84EC87703423E93D461D1 /* Calibri-Regular.ttf */,
+				10B251846FA54A2B86F01D5A /* Nunito-Bold.ttf */,
+				8FCEB439E81847149790B4BD /* Nunito-Regular.ttf */,
+				AB6469148F074D2EB247825D /* Nunito-SemiBold.ttf */,
+				9BDA7E50BB6741E3836FA82C /* Poppins-Regular.ttf */,
+			);
+			name = Resources;
+			path = "";
+			sourceTree = "<group>";
+		};
 		00E356EF1AD99517003FC87E /* BobDesignExampleTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +156,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				002BD4781826426ABD321574 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -235,6 +268,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADB0C851365C4760899C358A /* Gilroy-ExtraBold.otf in Resources */,
+				559D9F6DDE5D4A5A8EC2BD01 /* Gilroy-Light.otf in Resources */,
+				AF984DC691D942E69060E742 /* Calibri-Bold.ttf in Resources */,
+				D4189B1AE9284A3F815BF65A /* Calibri-Regular.ttf in Resources */,
+				BF4671A339924971BEA518D0 /* Nunito-Bold.ttf in Resources */,
+				A6F93F7ED03C42DFAFEC4779 /* Nunito-Regular.ttf in Resources */,
+				3C122547BD1F47D3BC5AA634 /* Nunito-SemiBold.ttf in Resources */,
+				84C576630F8D45209031A4C9 /* Poppins-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
