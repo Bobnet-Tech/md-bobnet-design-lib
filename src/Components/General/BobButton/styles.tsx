@@ -22,6 +22,8 @@ export default StyleSheet.create({
   },
   primary: {
     backgroundColor: Colors.blue,
+    borderWidth: 1,
+    borderColor: Colors.blue,
   },
   primaryOutlined: {
     borderColor: Colors.black,
