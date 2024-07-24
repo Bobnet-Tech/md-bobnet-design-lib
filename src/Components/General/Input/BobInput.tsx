@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
-import { Text, TextInputProps, View } from 'react-native';
+import {
+  Text,
+  TextInputProps,
+  View,
+  TextInput as RNTextInput,
+} from 'react-native';
 import { TextInput } from 'react-native-paper';
 import { Colors } from '../../../Theme';
 import styles from './styles';
@@ -13,7 +18,7 @@ interface Props {
   hint?: string;
   customLeftComponent: any;
   labelStylesExternal?: any;
-  isEditable?: boolean; 
+  isEditable?: boolean;
   underlineColor?: string;
   leftIconStyle?: any;
   activeUnderlineColor?: string;
@@ -26,7 +31,7 @@ interface Props {
 const BobInput = (props: Props & TextInputProps) => {
   const hasError = !!props.error;
   const [focus, setFocus] = useState(false);
-  
+
   return (
     <View style={props.style}>
       <TextInput
@@ -38,9 +43,18 @@ const BobInput = (props: Props & TextInputProps) => {
         activeUnderlineColor={Colors.darkGrey}
         underlineStyle={styles.underlineBar}
         label={props.label}
-        style={[styles.bobInputContainer, {borderColor: 
-          props.errorCheck ?
-          (props.error ? Colors.warn : Colors.green) : focus ? Colors.darkBlue : Colors.lightGray}]}
+        style={[
+          styles.bobInputContainer,
+          {
+            borderColor: props.errorCheck
+              ? props.error
+                ? Colors.warn
+                : Colors.green
+              : focus
+              ? Colors.darkBlue
+              : Colors.lightGray,
+          },
+        ]}
         textColor={Colors.darkBlue}
         dense={true}
         placeholder={props.placeholder}
@@ -67,14 +81,14 @@ const BobInput = (props: Props & TextInputProps) => {
         }
         {...props}
       />
-      {
-        props.errorCheck &&
+      {props.errorCheck &&
         (props.error ? (
-         <Text style={styles.errorMessage}>{props.error}</Text>
-        ) : props.successMessage && (
-          <Text style={styles.successMessage}>{props.successMessage}</Text>
-        ))
-      }
+          <Text style={styles.errorMessage}>{props.error}</Text>
+        ) : (
+          props.successMessage && (
+            <Text style={styles.successMessage}>{props.successMessage}</Text>
+          )
+        ))}
     </View>
   );
 };
@@ -85,7 +99,7 @@ BobInput.defaultProps = {
   error: null,
   leftIconColor: 'black',
   errorCheck: false,
-  editable: true
+  editable: true,
 };
 
 export default BobInput;

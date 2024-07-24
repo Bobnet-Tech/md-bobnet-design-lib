@@ -44,96 +44,99 @@ const countries = [
 ];
 
 const BobPhoneNumberInput = (props: Props & TextInputProps) => {
-    const hasError = !!props.error;
-    const [isFocused, setIsFocused] = useState(false);
+  const hasError = !!props.error;
+  const [isFocused, setIsFocused] = useState(false);
 
-    const dynamicStyle = {
-        borderColor: props.errorCheck
-          ? (props.error ? Colors.warn : Colors.green)
-          : isFocused
-          ? Colors.darkBlue
-          : Colors.lightGray,
-      };
-  
-    const onInputFocus = () => {
-      setIsFocused(true);
-    };
-    const onInputBlur = () => {
-        setIsFocused(false);
-    }
-  
-    return (
-      <>
-        <View style={props.style}>
-          <PhoneInput
-            initialCountry={'ro'}
-            {...props}
-            renderFlag={(flag) => {
-              return (
-                <View
-                  style={
-                    (props.errorCheck &&
-                      props.error &&
-                      styles.customFlagTouched) ||
-                    styles.customPhoneFlag
-                  }
-                >
-                    <Image source={flag.imageSource} style={{width: 20, height: 20, borderRadius: 20}} />
-                    <Text style={styles.customFlagText}>{props.dialCode}</Text>
-                    <BobPhoneArrowIcon width={10} height={10} style={{marginLeft: 5}} />
-                </View>
-              );
-            }}
-            textComponent={TextInput}
-            allowZeroAfterCountryCode={true}
-            autoFormat={true}
-            offset={-1}
-            countriesList={countries}
-            flagStyle={styles.flag}
-            onSelectCountry={(country) => props.onSelectCountry(country)}
-            textProps={{
-              //@ts-ignore
-              error: hasError,
-              label: props.label,
-              staticLabel: props.staticLabel,
-              keyboardType: 'phone-pad',
-              autoCapitalize: 'none',
-              returnKeyType: 'next',
-              maxLength: 10,
-              onBlur: onInputBlur,
-              onFocus: onInputFocus,
-              dense: true,
-              textColor: Colors.darkBlue,
-              activeUnderlineColor: Colors.darkGrey,
-              placeholderTextColor: Colors.lightGray,
-              
-              underlineStyle: styles.underlineBar,
-              style: [styles.bobInputContainer, dynamicStyle],
-              left: <TextInput.Icon
-              icon={() => props.customLeftComponent}
-              style={props.leftIconStyle}
-            />,
-              ...props,
-            }}
-            textStyle={styles.container}
-          />
-          {props.errorCheck &&
-            (props.error ? (
-              <>
-                <ErrorIcon style={styles.rightIconPhone} />
-                <View style={styles.phoneNumberBorderError} />
-              </>
-            ) : (
-              <>
-                <PassedIcon style={styles.rightIconPhone} />
-                <View style={styles.phoneNumberBorderPassed} />
-              </>
-            ))}
-        </View>
-        <View>
-          {props.error && <Text style={styles.error}>{props.error}</Text>}
-        </View>
-      </>
+  const dynamicStyle = {
+    borderColor: props.errorCheck
+      ? props.error
+        ? Colors.warn
+        : Colors.green
+      : isFocused
+      ? Colors.darkBlue
+      : Colors.lightGray,
+  };
+
+  const onInputFocus = () => {
+    setIsFocused(true);
+  };
+  const onInputBlur = () => {
+    setIsFocused(false);
+  };
+
+  return (
+    <>
+      <View style={props.style}>
+        <PhoneInput
+          initialCountry={'ro'}
+          {...props}
+          renderFlag={(flag) => {
+            return (
+              <View style={styles.customPhoneFlag}>
+                <Image
+                  source={flag.imageSource}
+                  style={{ width: 20, height: 20, borderRadius: 20 }}
+                />
+                <Text style={styles.customFlagText}>{props.dialCode}</Text>
+                <BobPhoneArrowIcon
+                  width={10}
+                  height={10}
+                  style={{ marginLeft: 5 }}
+                />
+              </View>
+            );
+          }}
+          textComponent={TextInput}
+          allowZeroAfterCountryCode={true}
+          autoFormat={true}
+          offset={-1}
+          countriesList={countries}
+          flagStyle={styles.flag}
+          onSelectCountry={(country) => props.onSelectCountry(country)}
+          textProps={{
+            //@ts-ignore
+            error: hasError,
+            label: props.label,
+            staticLabel: props.staticLabel,
+            keyboardType: 'phone-pad',
+            autoCapitalize: 'none',
+            returnKeyType: 'next',
+            maxLength: 10,
+            onBlur: onInputBlur,
+            onFocus: onInputFocus,
+            dense: true,
+            textColor: Colors.darkBlue,
+            activeUnderlineColor: Colors.darkGrey,
+            placeholderTextColor: Colors.lightGray,
+            underlineStyle: styles.underlineBar,
+            style: [styles.bobInputContainer, dynamicStyle],
+            left: (
+              <TextInput.Icon
+                icon={() => props.customLeftComponent}
+                style={props.leftIconStyle}
+              />
+            ),
+            ...props,
+          }}
+          textStyle={styles.container}
+        />
+        {props.errorCheck &&
+          (props.error ? (
+            <>
+              <ErrorIcon style={styles.rightIconPhone} />
+              {/* <View style={styles.phoneNumberBorderError} /> */}
+            </>
+          ) : (
+            <>
+              <PassedIcon style={styles.rightIconPhone} />
+              {/* <View style={styles.phoneNumberBorderPassed} /> */}
+            </>
+          ))}
+      </View>
+      <View>
+        {props.error && <Text style={styles.error}>{props.error}</Text>}
+      </View>
+    </>
   );
 };
 
