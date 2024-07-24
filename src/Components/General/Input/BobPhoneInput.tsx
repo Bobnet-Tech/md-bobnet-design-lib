@@ -6,7 +6,7 @@ import PassedIcon from '../../../Assets/PassedIcon';
 import ErrorIcon from '../../../Assets/ErrorIcon';
 import { TextInput } from 'react-native-paper';
 import { Colors } from '../../../Theme';
-import BobPhoneArrowIcon from '../../../Assets/BobPhoneArrowIcon';
+import Icon from 'react-native-vector-icons/Entypo';
 
 interface Props {
   label?: any;
@@ -78,10 +78,10 @@ const BobPhoneNumberInput = (props: Props & TextInputProps) => {
                   style={{ width: 20, height: 20, borderRadius: 20 }}
                 />
                 <Text style={styles.customFlagText}>{props.dialCode}</Text>
-                <BobPhoneArrowIcon
-                  width={10}
-                  height={10}
-                  style={{ marginLeft: 5 }}
+                <Icon
+                  name={'chevron-thin-down'}
+                  size={13}
+                  color={Colors.darkGrey}
                 />
               </View>
             );

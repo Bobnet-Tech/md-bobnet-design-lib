@@ -24,9 +24,10 @@ export default StyleSheet.create({
   },
   bobInputContainer: {
     borderWidth: 1,
-    borderRadius: 12,
-    borderTopEndRadius: 12,
+    borderTopRightRadius: 12,
     borderTopLeftRadius: 12,
+    borderBottomLeftRadius: 12,
+    borderBottomRightRadius: 12,
     paddingTop: 0,
     height: 48,
     borderColor: Colors.lightGray,
