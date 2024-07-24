@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import Loading from './Loading';
 import styles from './styles';
+import { Colors } from '../../../Theme';
 interface Props {
   onPress: any;
   type: 'primary' | 'secondary' | 'link';
@@ -43,20 +44,30 @@ const Button = ({
   let currentStyles = useMemo(() => {
     let buttonKey = '';
     let textKey = '';
+    let indicatorKey = '';
     switch (type) {
       case 'primary':
       case 'secondary':
         buttonKey = outlined ? `${type}Outlined` : type;
         textKey = outlined ? `${type}TextOutlined` : `${type}Text`;
+        indicatorKey = outlined
+          ? type === 'primary'
+            ? Colors.black
+            : Colors.blue
+          : type === 'secondary'
+          ? Colors.lightGray
+          : Colors.white;
         break;
       case 'link':
         buttonKey = 'link';
         textKey = 'linkText';
+        indicatorKey = Colors.blue;
         break;
     }
     return {
       button: styles[buttonKey],
       text: styles[textKey],
+      colorIndicator: indicatorKey,
     };
   }, [type, outlined]);
   return (
@@ -69,7 +80,7 @@ const Button = ({
       {...rest}
     >
       <View style={[styles.button, currentStyles.button, style]}>
-        {isLoading && <Loading outlined={outlined} />}
+        {isLoading && <Loading color={currentStyles.colorIndicator} />}
         {!isLoading && (
           <View style={styles.buttonContiner}>
             {leftIcon && leftIcon}

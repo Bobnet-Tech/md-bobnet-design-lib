@@ -15,11 +15,6 @@ export default StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
   },
-  loadingContainer: {
-    width: 90,
-    paddingVertical: 10,
-    borderRadius: 10,
-  },
   primary: {
     backgroundColor: Colors.blue,
     borderWidth: 1,

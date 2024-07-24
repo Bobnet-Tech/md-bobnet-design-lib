@@ -1,19 +1,11 @@
 import React from 'react';
-
-import LottieView from 'lottie-react-native';
-import styles from './styles';
-import { View } from 'react-native';
+import { ActivityIndicator } from 'react-native-paper';
 interface Props {
-  outlined: boolean;
+  color: string;
 }
 
-const Loading = ({ outlined }: Props) => {
-  let animation = outlined ? require('./black.json') : require('./white.json');
-  return (
-    <View style={styles.loadingContainer}>
-      <LottieView source={animation} autoPlay loop />
-    </View>
-  );
+const Loading = ({ color }: Props) => {
+  return <ActivityIndicator color={color} size={19} />;
 };
 
 export default Loading;
