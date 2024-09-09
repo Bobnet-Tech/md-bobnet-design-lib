@@ -46,11 +46,11 @@ const BobInput = (props: Props & TextInputProps) => {
                 ? Colors.warn
                 : Colors.green
               : focus
-              ? Colors.darkBlue
-              : Colors.lightGray,
+              ? Colors.blue
+              : Colors.neutral,
           },
         ]}
-        textColor={Colors.darkBlue}
+        textColor={Colors.blue}
         dense={true}
         placeholder={props.placeholder}
         placeholderTextColor={Colors.lightGray}

@@ -20,19 +20,18 @@ storiesOf('BobButtons', module)
       return (
         <View>
           <BobButton
-            disabled={true}
             leftIcon={<Icon name={'mail'} size={18} color={'white'} />}
             type="primary"
             text="Primary"
           />
           <View style={styles.separator} />
-          <BobButton type="primary" text="Primary" outlined />
+          <BobButton type="primary" text="Primary outlined" outlined />
           <View style={styles.separator} />
           <BobButton type="link" text="Link" />
           <View style={styles.separator} />
-          <BobButton type="secondary" text="Primary" outlined />
+          <BobButton type="secondary" text="Secondary " />
           <View style={styles.separator} />
-          <BobButton type="secondary" text="Secondary" />
+          <BobButton type="secondary" text="Secondary outlined" outlined />
         </View>
       );
     })

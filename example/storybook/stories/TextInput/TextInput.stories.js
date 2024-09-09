@@ -128,7 +128,7 @@ storiesOf('Inputs', module)
               label={
                 <Text
                   style={{
-                    color: '#41556B',
+                    color: '#111E28',
                     fontFamily: 'Nunito-Bold',
                     fontSize: 13,
                   }}
@@ -149,7 +149,7 @@ storiesOf('Inputs', module)
               label={
                 <Text
                   style={{
-                    color: '#41556B',
+                    color: '#111E28',
                     fontFamily: 'Nunito-Bold',
                     fontSize: 13,
                   }}
@@ -171,7 +171,7 @@ storiesOf('Inputs', module)
                 <Text
                   style={{
                     fontFamily: 'Nunito-Bold',
-                    color: '#41556B',
+                    color: '#111E28',
                     fontSize: 13,
                   }}
                 >

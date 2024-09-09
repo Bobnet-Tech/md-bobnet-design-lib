@@ -5,7 +5,7 @@ export default StyleSheet.create({
   button: {
     justifyContent: 'center',
     alignItems: 'center',
-    paddingVertical: 10,
+    height: 38,
     borderRadius: 12,
   },
   text: {
@@ -21,7 +21,7 @@ export default StyleSheet.create({
     borderColor: Colors.blue,
   },
   primaryOutlined: {
-    borderColor: Colors.black,
+    borderColor: Colors.blue,
     borderWidth: 1,
   },
   primaryText: {
@@ -29,20 +29,20 @@ export default StyleSheet.create({
     fontFamily: FontFamily.bold,
   },
   primaryTextOutlined: {
-    color: Colors.primary,
+    color: Colors.blue,
     fontFamily: FontFamily.bold,
   },
   secondary: {
-    backgroundColor: 'transparent',
-    borderColor: Colors.lightGray,
+    backgroundColor: Colors.green,
+    borderColor: Colors.green,
     borderWidth: 1,
   },
   secondaryOutlined: {
-    borderColor: Colors.blue,
+    borderColor: Colors.neutral,
     borderWidth: 1,
   },
   secondaryText: {
-    color: Colors.lightGray,
+    color: Colors.lightTextColor,
     fontFamily: FontFamily.bold,
   },
   secondaryTextOutlined: {

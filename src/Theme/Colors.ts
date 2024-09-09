@@ -16,6 +16,8 @@ export default {
   darkGrey: '#41556B',
   darkBlue: '#06203D',
   warn: '#E26B28',
-  green: '#77BC1F',
-  blue: '#1F62AE'
+  green: '#97D700',
+  blue: '#111E28',
+  lightTextColor: '#FCFDFD',
+  neutral: '#EAECF4',
 };
