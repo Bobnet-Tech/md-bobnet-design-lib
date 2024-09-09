@@ -23,7 +23,8 @@ import {InformationBox, CustomRadio, InformationBox} from 'react-native-bob-desi
 - PhoneInput
 - Textarea
 - Button
-
+- BobInput
+- BobPhoneInput
 
 ## Contributing
 

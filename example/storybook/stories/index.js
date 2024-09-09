@@ -3,6 +3,7 @@ import './InformationBox/InformationBox.stories';
 import './FormValidation/RegisterValidation.stories';
 import './TextInput/TextInput.stories';
 import './Button/Button.stories';
+import './BobButton/BobButton.stories';
 import './CheckBox/CheckBox.stories';
 import './Radio/Radio.stories';
 import './Popups/Popup.stories';

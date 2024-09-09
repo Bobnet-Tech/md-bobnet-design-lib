@@ -7,12 +7,14 @@ import {
   Input,
   Textarea,
   PasswordInput,
+  BobInput,
+  BobPhoneInput,
 } from 'react-native-bob-design';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 import { withKnobs } from '@storybook/addon-ondevice-knobs';
 import { text } from '@storybook/addon-knobs';
-import EmailIcon from '../../../assets/Svgs/EmailIcon'
-
+import EmailIcon from '../../../assets/Svgs/EmailIcon';
+import Icon from 'react-native-vector-icons/Feather';
 
 storiesOf('Inputs', module)
   .addDecorator(withKnobs)
@@ -29,7 +31,9 @@ storiesOf('Inputs', module)
             label={text('Phone Label 1', 'Phone Number')}
             value={phone}
             dialCode={dialCode}
-            onSelectCountry={(country) => setDialCode(country === 'ro' ? '+40' : '+373')}
+            onSelectCountry={(country) =>
+              setDialCode(country === 'ro' ? '+40' : '+373')
+            }
             phoneIcon={{ marginLeft: 15 }}
             error={text('Error', 'This field is required')}
           />
@@ -52,7 +56,7 @@ storiesOf('Inputs', module)
             label={'Last Name'}
             leftIcon={'email'}
             customLeftComponent={<EmailIcon />}
-            style={{backgroundColor: 'white'}}
+            style={{ backgroundColor: 'white' }}
           />
           <Input
             staticLabel={false}
@@ -103,6 +107,82 @@ storiesOf('Inputs', module)
             error={'This field is required'}
             label={'Password'}
           />
+        </View>
+      );
+    })
+  )
+  .add('Bob Input', () =>
+    React.createElement(() => {
+      const [description, setDescription] = useState();
+      const [dialCode, setDialCode] = useState('+40');
+
+      return (
+        <View>
+          <View style={{ marginBottom: 20 }}>
+            <BobInput
+              value={description}
+              onChangeText={setDescription}
+              customLeftComponent={
+                <Icon name={'user'} size={18} color={'#1F62AE'} />
+              }
+              label={
+                <Text
+                  style={{
+                    color: '#111E28',
+                    fontFamily: 'Nunito-Bold',
+                    fontSize: 13,
+                  }}
+                >
+                  Full Name
+                </Text>
+              }
+            />
+          </View>
+          <View style={{ marginBottom: 20 }}>
+            <BobInput
+              value={description}
+              onChangeText={setDescription}
+              placeholder={'john.doe@email.com'}
+              customLeftComponent={
+                <Icon name={'mail'} size={18} color={'#1F62AE'} />
+              }
+              label={
+                <Text
+                  style={{
+                    color: '#111E28',
+                    fontFamily: 'Nunito-Bold',
+                    fontSize: 13,
+                  }}
+                >
+                  Email
+                </Text>
+              }
+            />
+          </View>
+          <View style={{ marginBottom: 20 }}>
+            <BobPhoneInput
+              dialCode={dialCode}
+              value={description}
+              onChangeText={setDescription}
+              customLeftComponent={
+                <Icon name={'phone'} size={18} color={'#1F62AE'} />
+              }
+              label={
+                <Text
+                  style={{
+                    fontFamily: 'Nunito-Bold',
+                    color: '#111E28',
+                    fontSize: 13,
+                  }}
+                >
+                  Phone Number
+                </Text>
+              }
+              onSelectCountry={(country) =>
+                setDialCode(country === 'md' ? '+373' : '+40')
+              }
+            />
+          </View>
         </View>
       );
     })

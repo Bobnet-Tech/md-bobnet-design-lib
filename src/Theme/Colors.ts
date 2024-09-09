@@ -12,4 +12,12 @@ export default {
   success: '#94C200',
   error: '#FF762B',
   warning: '#FF762B',
+  lightGray: '#8394A6',
+  darkGrey: '#41556B',
+  darkBlue: '#06203D',
+  warn: '#E26B28',
+  green: '#97D700',
+  blue: '#111E28',
+  lightTextColor: '#FCFDFD',
+  neutral: '#EAECF4',
 };
