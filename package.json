@@ -163,6 +163,7 @@
   "dependencies": {
     "@react-native/metro-config": "^0.74.85",
     "patch-package": "^6.4.7",
+    "react-native-floating-label-input": "^1.4.3",
     "react-native-input-spinner": "^1.7.12",
     "react-native-modal": "^13.0.1",
     "react-native-paper": "^5.12.3",

@@ -8796,6 +8796,11 @@ react-native-builder-bob@^0.18.0:
   optionalDependencies:
     jetifier "^2.0.0"
 
+react-native-floating-label-input@^1.4.3:
+  version "1.4.3"
+  resolved "https://registry.yarnpkg.com/react-native-floating-label-input/-/react-native-floating-label-input-1.4.3.tgz#4945ea61e9733e8922a0601cde4a7f248c0ce867"
+  integrity sha512-+M4jxs5KiqzXGiFeUi+G69tpgQFDUknGpWbiRtiQVREvwFA5rkZW3HiETzx0zxYhhr7Jgb47thh+DOzkwwcQnA==
+
 react-native-input-spinner@^1.7.12:
   version "1.8.1"
   resolved "https://registry.yarnpkg.com/react-native-input-spinner/-/react-native-input-spinner-1.8.1.tgz#1802327a249192c560f58c65a1a857eeef1330c0"

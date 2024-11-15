@@ -55,7 +55,14 @@ storiesOf('Inputs', module)
             onChangeText={setLastName}
             label={'Last Name'}
             leftIcon={'email'}
-            customLeftComponent={<EmailIcon />}
+            customLeftComponent={
+              <Icon
+                style={{ marginRight: 10 }}
+                name={'user'}
+                size={18}
+                color={'#1F62AE'}
+              />
+            }
             style={{ backgroundColor: 'white' }}
           />
           <Input

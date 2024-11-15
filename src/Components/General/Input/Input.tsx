@@ -1,10 +1,10 @@
 import React from 'react';
 import { Text, TextInputProps, View } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import { FloatingLabelInput } from 'react-native-floating-label-input';
 import styles from './styles';
 import PassedIcon from '../../../Assets/PassedIcon';
 import ErrorIcon from '../../../Assets/ErrorIcon';
-import { TextInput } from 'react-native-paper';
-import { Colors } from '../../../Theme';
 
 interface Props {
   label?: any;
@@ -15,59 +15,47 @@ interface Props {
   hint?: string;
   customLeftComponent: any;
   labelStylesExternal: any;
-  isEditable?: boolean; 
   errorCheck: boolean;
 }
 
 const Input = (props: Props & TextInputProps) => {
-  const hasError = !!props.error;
+  let labelStyles = {
+    ...styles.labelStyles,
+    ...props.labelStylesExternal,
+    ...(props.staticLabel ? { paddingTop: 10 } : {}),
+  };
   return (
     <View style={props.style}>
-      <TextInput
+      <FloatingLabelInput
         staticLabel={props.staticLabel}
-        outlineStyle={
+        labelStyles={labelStyles}
+        containerStyles={
           (props.errorCheck &&
             (props.error ? styles.errorContainer : styles.passedContainer)) ||
           styles.container
         }
-        //@ts-ignore
-        error={hasError}
-        underlineColor={Colors.gray}
-        activeUnderlineColor={Colors.gray}
-        underlineStyle={styles.underlineBar}
         label={props.label}
-        editable={props.isEditable}
+        animationDuration={300}
         autoCapitalize={props.autoCapitalize}
         autoCorrect={false}
         hint={props.hint}
-        left={
-          props.customLeftComponent ? ( // Check if customLeftComponent exists
-          <TextInput.Icon
-          icon={() => {
-            return props.customLeftComponent
-          }}
-          style={styles.leftIcon}
-        />
-          ) : (
-            props.leftIcon && ( // Fallback to leftIcon if customLeftComponent is not provided
-              <TextInput.Icon
-                icon={props.leftIcon}
-                style={styles.leftIcon}
-                color={props.leftIconColor}
-              />
-            )
-          )
+        hintTextColor="#c1c1c1"
+        leftComponent={
+          props.customLeftComponent ||
+          (props.leftIcon && (
+            <Icon
+              name={props.leftIcon}
+              style={styles.leftIcon}
+              color={props.leftIconColor}
+            />
+          ))
         }
-        right={
+        rightComponent={
           props.errorCheck &&
           (props.error ? (
-            <TextInput.Icon icon={() => {
-              return <ErrorIcon style={styles.rightIcon} />;
-            }}/>
+            <ErrorIcon style={styles.rightIcon} />
           ) : (
-            <TextInput.Icon icon={() => {
-              return <PassedIcon style={styles.rightIcon} />
-            }}/>
+            <PassedIcon style={styles.rightIcon} />
           ))
         }
         {...props}
@@ -83,7 +71,6 @@ Input.defaultProps = {
   error: null,
   leftIconColor: 'black',
   errorCheck: false,
-  editable: true
 };
 
 export default Input;

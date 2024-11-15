@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Text, TextInputProps, View } from 'react-native';
+import { FloatingLabelInput } from 'react-native-floating-label-input';
 import styles from './styles';
 import ShowPass from '../../../Assets/ShowPass';
 import HidePass from '../../../Assets/HidePass';
 import PasswordIcon from '../../../Assets/PasswordIcon';
 import PassedIcon from '../../../Assets/PassedIcon';
 import ErrorIcon from '../../../Assets/ErrorIcon';
-import { TextInput } from 'react-native-paper';
-import { Colors } from '../../../Theme';
 
 interface Props {
   label?: any;
@@ -24,36 +23,27 @@ interface Props {
 }
 
 const PasswordInput = (props: Props & TextInputProps) => {
-  const [secureTextEntry, setSecureTextEntry] = useState(true);
+  let labelStyles = {
+    ...styles.labelStyles,
+    ...props.labelStylesExternal,
+    ...(props.staticLabel ? { paddingTop: 10 } : {}),
+  };
   return (
     <>
       <View style={props.style}>
-        <TextInput
+        <FloatingLabelInput
           staticLabel={props.staticLabel}
           label={props.label}
-          outlineStyle={styles.container}
-          underlineColor={Colors.gray}
-          activeUnderlineColor={Colors.gray}
-          underlineStyle={styles.underlineBar}
-          secureTextEntry={secureTextEntry}
-          left={
-            <TextInput.Icon
-            icon={() => {
-              return <PasswordIcon />
-            }}
-            style={props.passwordIcon ? props.passwordIcon : { marginRight: 15, marginTop: 10 }} />
-          }
-          right={
-            <TextInput.Icon
-              icon={!secureTextEntry ? "eye" : "eye-off"}
-              onPress={() => {
-                setSecureTextEntry(!secureTextEntry);
-                return false;
-              }}
-              style={{marginRight: 70}}
+          labelStyles={labelStyles}
+          containerStyles={styles.container}
+          isPassword
+          leftComponent={
+            <PasswordIcon
+              style={
+                props.passwordIcon ? props.passwordIcon : { marginRight: 5 }
+              }
             />
           }
-          //@ts-ignore
           customShowPasswordComponent={
             <View
               accessibilityLabel="toggle-show-password"
@@ -64,16 +54,28 @@ const PasswordInput = (props: Props & TextInputProps) => {
               {props.customShowPassword}
             </View>
           }
+          customHidePasswordComponent={
+            <View
+              accessibilityLabel="toggle-hide-password"
+              style={{
+                marginRight: props.errorCheck ? 30 : 0,
+              }}
+            >
+              {props.customHidePassword}
+            </View>
+          }
           {...props}
         />
         {props.errorCheck &&
           (props.error ? (
             <>
               <ErrorIcon style={styles.rightIconPhone} />
+              <View style={styles.phoneNumberBorderError} />
             </>
           ) : (
             <>
               <PassedIcon style={styles.rightIconPhone} />
+              <View style={styles.phoneNumberBorderPassed} />
             </>
           ))}
       </View>
