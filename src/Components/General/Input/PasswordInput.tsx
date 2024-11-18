@@ -48,7 +48,7 @@ const PasswordInput = (props: Props & TextInputProps) => {
             <View
               accessibilityLabel="toggle-show-password"
               style={{
-                marginRight: props.errorCheck ? 30 : 0,
+                marginRight: props.errorCheck ? 25 : 0,
               }}
             >
               {props.customShowPassword}
@@ -58,7 +58,7 @@ const PasswordInput = (props: Props & TextInputProps) => {
             <View
               accessibilityLabel="toggle-hide-password"
               style={{
-                marginRight: props.errorCheck ? 30 : 0,
+                marginRight: props.errorCheck ? 25 : 0,
               }}
             >
               {props.customHidePassword}
@@ -69,12 +69,12 @@ const PasswordInput = (props: Props & TextInputProps) => {
         {props.errorCheck &&
           (props.error ? (
             <>
-              <ErrorIcon style={styles.rightIconPhone} />
+              <ErrorIcon style={styles.rightIconInput} />
               <View style={styles.phoneNumberBorderError} />
             </>
           ) : (
             <>
-              <PassedIcon style={styles.rightIconPhone} />
+              <PassedIcon style={styles.rightIconInput} />
               <View style={styles.phoneNumberBorderPassed} />
             </>
           ))}

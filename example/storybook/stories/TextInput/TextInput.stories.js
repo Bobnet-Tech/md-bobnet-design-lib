@@ -72,6 +72,14 @@ storiesOf('Inputs', module)
             error={'This field is required'}
             style={{ marginBottom: 5 }}
             label={'First Name'}
+            errorCheck={true}
+          />
+          <PasswordInput
+            value={firstName}
+            onChangeText={setFirstName}
+            error={'This field is required'}
+            label={'Password'}
+            errorCheck={true}
           />
         </View>
       );
