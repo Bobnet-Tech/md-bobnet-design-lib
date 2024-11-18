@@ -74,10 +74,9 @@ export default StyleSheet.create({
   },
   errorContainer: {
     flexDirection: 'row',
-    borderColor: Colors.black,
     borderBottomWidth: StyleSheet.hairlineWidth,
     borderBottomColor: Colors.error,
-    paddingHorizontal: 11,
+    paddingHorizontal: 10,
     backgroundColor: Colors.white,
     paddingTop: 10,
     paddingBottom: 10,
@@ -86,10 +85,9 @@ export default StyleSheet.create({
   },
   passedContainer: {
     flexDirection: 'row',
-    borderColor: Colors.black,
     borderBottomWidth: 1,
     borderBottomColor: Colors.secondary,
-    paddingHorizontal: 11,
+    paddingHorizontal: 10,
     backgroundColor: Colors.white,
     paddingTop: 10,
     paddingBottom: 10,
