@@ -1,0 +1,20 @@
+diff --git a/node_modules/react-native-floating-label-input/src/index.tsx b/node_modules/react-native-floating-label-input/src/index.tsx
+index 15d4b54..cb0e438 100644
+--- a/node_modules/react-native-floating-label-input/src/index.tsx
++++ b/node_modules/react-native-floating-label-input/src/index.tsx
+@@ -545,13 +545,13 @@ const FloatingLabelInput: React.ForwardRefRenderFunction<InputRef, Props> = (
+             duration: animationDuration || 300,
+             easing: Easing.in(Easing.ease),
+           }),
+-        },
++        } as any,
+         {
+           translateY: withTiming(topAnimated, {
+             duration: animationDuration || 300,
+             easing: Easing.in(Easing.ease),
+           }),
+-        },
++        } as any,
+       ],
+       opacity: withTiming(sharedValueOpacity.value, {
+         duration: animationDuration || 600,
