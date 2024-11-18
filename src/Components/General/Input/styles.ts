@@ -14,6 +14,18 @@ export default StyleSheet.create({
     alignContent: 'center',
     justifyContent: 'center',
   },
+  passContainer: {
+    paddingBottom: 7,
+    flexDirection: 'row',
+    borderColor: Colors.black,
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomColor: Colors.gray,
+    paddingHorizontal: 11,
+    backgroundColor: Colors.white,
+    paddingTop: 12,
+    alignContent: 'center',
+    justifyContent: 'center',
+  },
   outlinedInput: {
     flexDirection: 'row',
     borderColor: Colors.lightGray,
@@ -85,7 +97,7 @@ export default StyleSheet.create({
   },
   passedContainer: {
     flexDirection: 'row',
-    borderBottomWidth: 1,
+    borderBottomWidth: StyleSheet.hairlineWidth,
     borderBottomColor: Colors.secondary,
     paddingHorizontal: 10,
     backgroundColor: Colors.white,
@@ -136,7 +148,7 @@ export default StyleSheet.create({
   rightIconInput: {
     position: 'absolute',
     right: 10,
-    top: 20,
+    top: 18,
     zIndex: 99999,
   },
   phoneNumberBorderError: {

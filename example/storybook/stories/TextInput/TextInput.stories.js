@@ -69,7 +69,7 @@ storiesOf('Inputs', module)
             staticLabel={false}
             value={firstName}
             onChangeText={setFirstName}
-            // error={'This field is required'}
+            error={'This field is required'}
             style={{ marginBottom: 5 }}
             label={'First Name'}
             errorCheck={true}

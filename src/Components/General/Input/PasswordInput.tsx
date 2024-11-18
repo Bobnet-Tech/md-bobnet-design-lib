@@ -35,7 +35,11 @@ const PasswordInput = (props: Props & TextInputProps) => {
           staticLabel={props.staticLabel}
           label={props.label}
           labelStyles={labelStyles}
-          containerStyles={styles.container}
+          containerStyles={
+            (props.errorCheck &&
+              (props.error ? styles.errorContainer : styles.passedContainer)) ||
+            styles.passContainer
+          }
           isPassword
           leftComponent={
             <PasswordIcon
@@ -48,6 +52,7 @@ const PasswordInput = (props: Props & TextInputProps) => {
             <View
               accessibilityLabel="toggle-show-password"
               style={{
+                marginTop: 0,
                 marginRight: props.errorCheck ? 25 : 0,
               }}
             >
@@ -70,12 +75,10 @@ const PasswordInput = (props: Props & TextInputProps) => {
           (props.error ? (
             <>
               <ErrorIcon style={styles.rightIconInput} />
-              <View style={styles.phoneNumberBorderError} />
             </>
           ) : (
             <>
               <PassedIcon style={styles.rightIconInput} />
-              <View style={styles.phoneNumberBorderPassed} />
             </>
           ))}
       </View>
