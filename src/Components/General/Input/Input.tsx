@@ -60,6 +60,9 @@ const Input = (props: Props & TextInputProps) => {
         }
         {...props}
       />
+      {!props.error && !props.errorCheck && (
+        <View style={styles.borderBottom}></View>
+      )}
       {props.error && <Text style={styles.error}>{props.error}</Text>}
     </View>
   );

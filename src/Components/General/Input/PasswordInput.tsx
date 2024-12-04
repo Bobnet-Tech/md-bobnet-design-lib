@@ -82,6 +82,9 @@ const PasswordInput = (props: Props & TextInputProps) => {
             </>
           ))}
       </View>
+      {!props.error && !props.errorCheck && (
+        <View style={styles.borderBottom}></View>
+      )}
       <View>
         {props.error && <Text style={styles.error}>{props.error}</Text>}
       </View>

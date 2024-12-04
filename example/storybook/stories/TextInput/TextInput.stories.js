@@ -51,17 +51,11 @@ storiesOf('Inputs', module)
             staticLabel={false}
             error={false}
             value={lastName}
-            labelStylesExternal={{ marginLeft: -10 }}
             onChangeText={setLastName}
             label={'Last Name'}
             leftIcon={'email'}
             customLeftComponent={
-              <Icon
-                style={{ marginRight: 10 }}
-                name={'user'}
-                size={18}
-                color={'#1F62AE'}
-              />
+              <Icon name={'user'} size={18} color={'#1F62AE'} />
             }
             style={{ backgroundColor: 'white' }}
           />
@@ -69,10 +63,9 @@ storiesOf('Inputs', module)
             staticLabel={false}
             value={firstName}
             onChangeText={setFirstName}
-            error={'This field is required'}
-            style={{ marginBottom: 5 }}
+            // error={'This field is required'}
             label={'First Name'}
-            errorCheck={true}
+            // errorCheck={true}
           />
           <PasswordInput
             value={firstName}
